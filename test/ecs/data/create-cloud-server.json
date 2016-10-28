@@ -1,0 +1,33 @@
+{
+  "server": {
+    "availability_zone": "cn-north-1a",
+    "name": "新服务器",
+    "imageRef": "34cbafb2-33ae-4e7f-9a2b-540d9f27ab96",
+    "root_volume": {
+      "volumetype": "SSD"
+    },
+    "flavorRef": "c1.medium",
+    "personality": [
+      {
+        "path": "/etc/banner.txt",
+        "contents": "ICAgICAgDQoiQmFjaA=="
+      }
+    ],
+    "security_groups": [
+      {
+        "id": "40c74dbd-aaca-4d93-b03e-9736ed856f25"
+      }
+    ],
+    "vpcid": "1e162a02-7612-45d8-a1e6-b01d5fde1872",
+    "nics": [
+      {
+        "subnet_id": "c2c7425e-5e35-4767-a524-74a52c217b49"
+      }
+    ],
+    "adminPass": "huawei00%%ad123",
+    "count": 1,
+    "extendparam": {
+      "regionID": "cn-north-1"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+configuration
+node_modules
+npm-debug.log
+coverage
+vendor
+.yardoc
+doc
+test/browser/build
+browser
+.vscode
+debug
+jsconfig.json
