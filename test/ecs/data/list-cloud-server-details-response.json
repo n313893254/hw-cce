@@ -1,0 +1,84 @@
+{
+  "servers": [
+    {
+      "tenant_id": "c6df6980813f463199d89bd2044a1308",
+      "addresses": {
+        "1e162a02-7612-45d8-a1e6-b01d5fde1872": [
+          {
+            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:7e:8c:ef",
+            "OS-EXT-IPS:type": "fixed",
+            "addr": "10.10.1.21",
+            "version": 4
+          }
+        ]
+      },
+      "metadata": {},
+      "OS-EXT-STS:task_state": null,
+      "OS-DCF:diskConfig": "MANUAL",
+      "OS-EXT-AZ:availability_zone": "cn-north-1a",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://None/v2/c6df6980813f463199d89bd2044a1308/servers/44a3f7aa-8777-4f71-982b-ee561e0fa0ae"
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://None/c6df6980813f463199d89bd2044a1308/servers/44a3f7aa-8777-4f71-982b-ee561e0fa0ae"
+        }
+      ],
+      "OS-EXT-STS:power_state": 1,
+      "id": "44a3f7aa-8777-4f71-982b-ee561e0fa0ae",
+      "os-extended-volumes:volumes_attached": [
+        {
+          "id": "a063e2bd-c785-458f-800a-f5f5e48a1204"
+        }
+      ],
+      "OS-EXT-SRV-ATTR:host": "pod1a.cnnorth1",
+      "image": {
+        "links": [
+          {
+            "rel": "bookmark",
+            "href": "https://None/c6df6980813f463199d89bd2044a1308/images/34cbafb2-33ae-4e7f-9a2b-540d9f27ab96"
+          }
+        ],
+        "id": "34cbafb2-33ae-4e7f-9a2b-540d9f27ab96"
+      },
+      "OS-SRV-USG:terminated_at": null,
+      "accessIPv4": "",
+      "accessIPv6": "",
+      "created": "2016-10-31T02:19:46Z",
+      "hostId": "0d3b7ea93f09841c553f46b6132b3a0cb118fc63c062d39729b1dc46",
+      "OS-EXT-SRV-ATTR:hypervisor_hostname": "nova001@36",
+      "key_name": null,
+      "flavor": {
+        "links": [
+          {
+            "rel": "bookmark",
+            "href": "https://None/c6df6980813f463199d89bd2044a1308/flavors/c1.medium"
+          }
+        ],
+        "id": "c1.medium"
+      },
+      "security_groups": [
+        {
+          "name": "default"
+        }
+      ],
+      "config_drive": "",
+      "OS-EXT-STS:vm_state": "active",
+      "OS-EXT-SRV-ATTR:instance_name": "instance-0003aaf8",
+      "user_id": "e69254f99c5641339b8843db542dafad",
+      "name": "知乎",
+      "progress": 0,
+      "OS-SRV-USG:launched_at": "2016-10-31T02:20:35.000000",
+      "updated": "2016-10-31T02:20:38Z",
+      "status": "ACTIVE"
+    }
+  ],
+  "servers_links": [
+    {
+      "rel": "next",
+      "href": "https://None/v2/c6df6980813f463199d89bd2044a1308/servers/detail?limit=1&marker=44a3f7aa-8777-4f71-982b-ee561e0fa0ae"
+    }
+  ]
+}
