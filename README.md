@@ -29,9 +29,9 @@ You can list cloud ECS servers through:
 
 ```Javascript
 var config = {
-  'ak': 'ak',
-  'sk': 'sk',
-  'projectId': 'c6df6980813f463199d89bd2044a1308', 
+  'ak': 'Your Access Key',
+  'sk': 'Your Secret Key',
+  'projectId': 'Your Project Id', 
   'endpoint': 'https://ecs.cn-north-1.myhwclouds.com', // same as default
   'region': 'cn-north-1'  // same as default
 }
