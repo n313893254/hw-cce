@@ -27,7 +27,7 @@ HTML pages:
 
 ## Usage and Getting Started
 
-You can list cloud ECS servers through:
+Step 1: instantiate ECS Client (ak, sk and projectId could be found on your admin dashboard)
 
 ```Javascript
 var config = {
@@ -38,18 +38,34 @@ var config = {
   'region': 'cn-north-1'  // same as default
 }
 
-var ECS = new HW.ECS(config)
+var client = new HW.ECS(config)
+```
 
-// list cloud ECS servers
-client.listCloudServers({ limit: 10 }, function (err, response) {
-  if(!err && response.status === 200) {
+Step 2: access ECS API through ECS client, for example, you can list ECS servers with code :
+
+```Javascript
+var callback = function (err, response) {
+  // if success, err is null and response is an object describe the HTTP response returned by server
+  if (!err && response.ok) {
     // response.body is the content returned from server
     console.log(response.body) 
   }
-})
+
+  // if access API failed, `err` will show the reason
+  // 1. err occurs before response transfer, response will be null
+  // 2. err occurs after response transfer, response is an object describe the HTTP response returned by server
+  if (err) {
+    console.error(err)
+  }
+}
+
+// list cloud ECS servers
+client.listCloudServers({ limit: 10 }, callback)
 ```
 
-You can get more detail about the API from [document](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212657.html)
+Step 3: API documents
+- official [document](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212657.html)
+- ECS Client API [document](TODO)
 
 ## License
 
