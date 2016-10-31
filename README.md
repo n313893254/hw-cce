@@ -1,6 +1,6 @@
 # HuaWei ECS Javascript Library
 
-[![Build Status](https://travis-ci.org/Huawei/eSDK_HWS_ECS_JS.svg?branch=master)](https://travis-ci.org/Huawei/eSDK_HWS_ECS_JS)
+[![Build Status](https://travis-ci.org/Huawei/eSDK_HWS_ECS_JS.svg?branch=master)](https://travis-ci.org/Huawei/eSDK_HWS_ECS_JS) [![Coverage Status](https://coveralls.io/repos/github/Huawei/eSDK_HWS_ECS_JS/badge.svg?branch=master)](https://coveralls.io/github/Huawei/eSDK_HWS_ECS_JS?branch=master)
 
 The official HW ECS SDK for JavaScript, available for browsers & Node.js
 
