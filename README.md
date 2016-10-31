@@ -1,5 +1,7 @@
 # HuaWei ECS Javascript Library
 
+[![Build Status](https://travis-ci.org/Huawei/eSDK_HWS_ECS_JS.svg?branch=master)](https://travis-ci.org/Huawei/eSDK_HWS_ECS_JS)
+
 The official HW ECS SDK for JavaScript, available for browsers & Node.js
 
 ## Installation
