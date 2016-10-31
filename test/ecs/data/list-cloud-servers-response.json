@@ -1,0 +1,38 @@
+{
+  "servers_links": [
+    {
+      "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/servers?limit=2&marker=643c63b5-39e6-46d1-b6e8-8a45f2d0a4e4",
+      "rel": "next"
+    }
+  ],
+  "servers": [
+    {
+      "id": "44a3f7aa-8777-4f71-982b-ee561e0fa0ae",
+      "links": [
+        {
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/servers/44a3f7aa-8777-4f71-982b-ee561e0fa0ae",
+          "rel": "self"
+        },
+        {
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/servers/44a3f7aa-8777-4f71-982b-ee561e0fa0ae",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "知乎"
+    },
+    {
+      "id": "643c63b5-39e6-46d1-b6e8-8a45f2d0a4e4",
+      "links": [
+        {
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/servers/643c63b5-39e6-46d1-b6e8-8a45f2d0a4e4",
+          "rel": "self"
+        },
+        {
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/servers/643c63b5-39e6-46d1-b6e8-8a45f2d0a4e4",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "知乎"
+    }
+  ]
+}
