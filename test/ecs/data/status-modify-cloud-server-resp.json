@@ -1,0 +1,44 @@
+{
+  "server": {
+    "tenant_id": "c6df6980813f463199d89bd2044a1308",
+    "image": "",
+    "accessIPv4": "",
+    "addresses": {
+      "1e162a02-7612-45d8-a1e6-b01d5fde1872": [
+        {
+          "addr": "10.10.1.25",
+          "version": 4
+        }
+      ]
+    },
+    "metadata": {},
+    "accessIPv6": "",
+    "created": "2016-11-01T03:03:48Z",
+    "hostId": "0d3b7ea93f09841c553f46b6132b3a0cb118fc63c062d39729b1dc46",
+    "flavor": {
+      "links": [
+        {
+          "rel": "bookmark",
+          "href": "https://None/c6df6980813f463199d89bd2044a1308/flavors/c1.large"
+        }
+      ],
+      "id": "c1.large"
+    },
+    "OS-DCF:diskConfig": "AUTO",
+    "user_id": "e69254f99c5641339b8843db542dafad",
+    "name": "example2",
+    "links": [
+      {
+        "rel": "self",
+        "href": "https://None/v2/c6df6980813f463199d89bd2044a1308/servers/89351b6c-3ffd-497d-8f06-822ecfbedab1"
+      },
+      {
+        "rel": "bookmark",
+        "href": "https://None/c6df6980813f463199d89bd2044a1308/servers/89351b6c-3ffd-497d-8f06-822ecfbedab1"
+      }
+    ],
+    "id": "89351b6c-3ffd-497d-8f06-822ecfbedab1",
+    "updated": "2016-11-01T10:00:38Z",
+    "status": "SHUTOFF"
+  }
+}

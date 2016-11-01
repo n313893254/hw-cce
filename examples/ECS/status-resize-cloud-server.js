@@ -14,7 +14,7 @@ var flavorId = 'c1.large' // http://support.hwclouds.com/usermanual-ecs/zh-cn_to
 var serverId = '89351b6c-3ffd-497d-8f06-822ecfbedab1' // 改成想要操作的云服务器ID
 
 // 注意需要先关闭服务器，才能进行修改配额操作
-ECSClient.resizeCloudServers(serverId, flavorId, function (err, response) {
+ECSClient.resizeCloudServer(serverId, flavorId, function (err, response) {
   if (!err && response.ok) {
     console.log(JSON.stringify(response.body, null, 2))
   } else {

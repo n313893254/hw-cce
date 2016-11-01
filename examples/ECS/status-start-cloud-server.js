@@ -11,7 +11,7 @@ var config = require('../config.json')
 var ECSClient = new HW.ECS(config)
 
 var serverId = '89351b6c-3ffd-497d-8f06-822ecfbedab1' // 改成想要操作的云服务器ID
-ECSClient.startCloudServers(serverId, function (err, response) {
+ECSClient.startCloudServer(serverId, function (err, response) {
   if (!err && response.ok) {
     console.log(JSON.stringify(response.body, null, 2))
   } else {
