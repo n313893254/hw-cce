@@ -65,7 +65,8 @@ client.listCloudServers({ limit: 10 }, callback)
 
 Step 3: API documents
 - official [document](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212657.html)
-- ECS Client API [document](TODO)
+- [ECS API Examples](./documents/Quick Start.md)
+
 
 ## License
 
