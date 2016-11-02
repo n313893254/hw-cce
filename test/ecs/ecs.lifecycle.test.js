@@ -18,8 +18,7 @@ describe('ECS::Lifecycle', function () {
 
       var payload = require('./data/create-cloud-server.json')
       client.createCloudServer(payload, function (err, response) {
-        var failed = (err || !response.ok)
-        failed.should.be.false()
+        (err || !response.ok).should.be.false()
         done()
       })
     })
@@ -42,18 +41,17 @@ describe('ECS::Lifecycle', function () {
     }
 
     it('if any argument is not present, throw error', () => {
-      client.deleteCloudServer.bind(null).should.throw()
-      client.deleteCloudServer.bind(null, null).should.throw()
-      client.deleteCloudServer.bind(null, null, null).should.throw()
-      client.deleteCloudServer.bind(serverId, null, null).should.throw()
-      client.deleteCloudServer.bind(serverId, deletePublicIp, null).should.throw()
+      client.deleteCloudServer.bind(client, null).should.throw()
+      client.deleteCloudServer.bind(client, null, null).should.throw()
+      client.deleteCloudServer.bind(client, null, null, null).should.throw()
+      client.deleteCloudServer.bind(client, serverId, null, null).should.throw()
+      client.deleteCloudServer.bind(client, serverId, deletePublicIp, null).should.throw()
     })
 
     it('Delete single Cloud Server task', done => {
       nock(endpoint).post(url).reply(200, successTaskResponse)
       client.deleteCloudServer(serverId, deletePublicIp, deleteVolume, function (err, response) {
-        var failed = (err || !response.ok)
-        failed.should.be.false()
+        (err || !response.ok).should.be.false()
         formdata.should.containDeep(JSON.parse(response.request._data))
         done()
       })
@@ -62,8 +60,7 @@ describe('ECS::Lifecycle', function () {
     it('Delete multiply Cloud Server task', done => {
       nock(endpoint).post(url).reply(200, successTaskResponse)
       client.deleteCloudServer([serverId], deletePublicIp, deleteVolume, function (err, response) {
-        var failed = (err || !response.ok)
-        failed.should.be.false()
+        (err || !response.ok).should.be.false()
         formdata.should.containDeep(JSON.parse(response.request._data))
         done()
       })
@@ -84,9 +81,9 @@ describe('ECS::Lifecycle', function () {
     })
 
     it('without server-id argument will throw error', () => {
-      client.getCloudServer.bind(null).should.throw()
-      client.getCloudServer.bind('').should.throw()
-      client.getCloudServer.bind('  ').should.throw()
+      client.getCloudServer.bind(client, null).should.throw()
+      client.getCloudServer.bind(client, '').should.throw()
+      client.getCloudServer.bind(client, '  ').should.throw()
     })
   })
 

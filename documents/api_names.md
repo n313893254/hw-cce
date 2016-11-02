@@ -1,0 +1,13 @@
+attachCloudServerInterface
+attachCloudServerVolume
+createCloudServer
+deleteCloudServer
+detachCloudServerInterface
+detachCloudServerVolume
+listCloudServerFlavorsExt
+rebootBatchCloudServers
+resizeCloudServer
+showCloudServerQuota
+showEcsJob
+startBatchCloudServers
+stopBatchCloudServers

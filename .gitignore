@@ -10,3 +10,4 @@ browser
 .vscode
 debug
 jsconfig.json
+examples/config.my.json
