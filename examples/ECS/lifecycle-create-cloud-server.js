@@ -13,6 +13,7 @@ var ECSClient = new HW.ECS(config)
 var vpcid = '1e162a02-7612-45d8-a1e6-b01d5fde1872' // 虚拟私有云
 var subnetId = 'c2c7425e-5e35-4767-a524-74a52c217b49' // 子网
 var securityGroupId = '40c74dbd-aaca-4d93-b03e-9736ed856f25' // 安全组
+var flavorId = 'c1.medium' // 服务器规格，可以通过接口 ECSClient.listCloudServerFlavors 获取
 
 var formdata = {
   'server': {
@@ -22,7 +23,7 @@ var formdata = {
     'root_volume': {
       'volumetype': 'SSD'
     },
-    'flavorRef': 'c1.medium',
+    'flavorRef': flavorId,
     'personality': [
       {
         'path': '/etc/banner.txt',

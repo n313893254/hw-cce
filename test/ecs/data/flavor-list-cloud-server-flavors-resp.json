@@ -1,0 +1,1136 @@
+{
+  "flavors": [
+    {
+      "id": "c1.2xlarge",
+      "name": "c1.2xlarge",
+      "vcpus": "8",
+      "ram": 8192,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c1.2xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c1.2xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "6651",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c2.8xlarge",
+      "name": "c2.8xlarge",
+      "vcpus": "32",
+      "ram": 65536,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c2.8xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c2.8xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "26603",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c2.xlarge",
+      "name": "c2.xlarge",
+      "vcpus": "4",
+      "ram": 8192,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c2.xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c2.xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "3325",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "m1.large",
+      "name": "m1.large",
+      "vcpus": "2",
+      "ram": 16384,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/m1.large",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/m1.large",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "1663",
+        "hws:performancetype": "highmem",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "h1.8xlarge",
+      "name": "h1.8xlarge",
+      "vcpus": "44",
+      "ram": 90112,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/h1.8xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/h1.8xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "instance_vnic:type": "enhanced",
+        "instance_vnic:instance_bandwidth": "9216",
+        "instance_vnic:max_count": "4",
+        "ecs:performancetype": "highcpu",
+        "resource_type": "HighPerformanceH1"
+      }
+    },
+    {
+      "id": "d1.2xlarge",
+      "name": "d1.2xlarge",
+      "vcpus": "8",
+      "ram": 65536,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/d1.2xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/d1.2xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "instance_vnic:type": "enhanced",
+        "quota:local_disk": "HDD:6:1800:FALSE",
+        "extra_spec:io:persistent_grant": "true",
+        "ecs:performancetype": "diskintensive",
+        "instance_vnic:instance_bandwidth": "2000",
+        "instance_vnic:max_count": "4",
+        "resource_type": "diskintensive"
+      }
+    },
+    {
+      "id": "s1.2xlarge",
+      "name": "s1.2xlarge",
+      "vcpus": "8",
+      "ram": 32768,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/s1.2xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/s1.2xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "6651",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "s1.medium",
+      "name": "s1.medium",
+      "vcpus": "1",
+      "ram": 4096,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/s1.medium",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/s1.medium",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "831",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c1.large",
+      "name": "c1.large",
+      "vcpus": "2",
+      "ram": 2048,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c1.large",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c1.large",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "1663",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c2.2xlarge",
+      "name": "c2.2xlarge",
+      "vcpus": "8",
+      "ram": 16384,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c2.2xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c2.2xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "6651",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "h1.4xlarge",
+      "name": "h1.4xlarge",
+      "vcpus": "20",
+      "ram": 40960,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/h1.4xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/h1.4xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "instance_vnic:type": "enhanced",
+        "instance_vnic:instance_bandwidth": "4198",
+        "instance_vnic:max_count": "4",
+        "ecs:performancetype": "highcpu",
+        "resource_type": "HighPerformanceH1"
+      }
+    },
+    {
+      "id": "s1.4xlarge",
+      "name": "s1.4xlarge",
+      "vcpus": "16",
+      "ram": 65536,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/s1.4xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/s1.4xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "13301",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c2.large",
+      "name": "c2.large",
+      "vcpus": "2",
+      "ram": 4096,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c2.large",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c2.large",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "1663",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "h1.xlarge",
+      "name": "h1.xlarge",
+      "vcpus": "4",
+      "ram": 8192,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/h1.xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/h1.xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "instance_vnic:type": "enhanced",
+        "instance_vnic:instance_bandwidth": "1689",
+        "instance_vnic:max_count": "4",
+        "ecs:performancetype": "highcpu",
+        "resource_type": "HighPerformanceH1"
+      }
+    },
+    {
+      "id": "c1.medium",
+      "name": "c1.medium",
+      "vcpus": "1",
+      "ram": 1024,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c1.medium",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c1.medium",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "831",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "m1.medium",
+      "name": "m1.medium",
+      "vcpus": "1",
+      "ram": 8192,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/m1.medium",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/m1.medium",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "831",
+        "hws:performancetype": "highmem",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "s1.8xlarge",
+      "name": "s1.8xlarge",
+      "vcpus": "32",
+      "ram": 131072,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/s1.8xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/s1.8xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "26603",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "h1.2xlarge",
+      "name": "h1.2xlarge",
+      "vcpus": "8",
+      "ram": 16384,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/h1.2xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/h1.2xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "instance_vnic:type": "enhanced",
+        "instance_vnic:instance_bandwidth": "1689",
+        "instance_vnic:max_count": "4",
+        "ecs:performancetype": "highcpu",
+        "resource_type": "HighPerformanceH1"
+      }
+    },
+    {
+      "id": "c2.medium",
+      "name": "c2.medium",
+      "vcpus": "1",
+      "ram": 2048,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c2.medium",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c2.medium",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "831",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "d1.8xlarge",
+      "name": "d1.8xlarge",
+      "vcpus": "36",
+      "ram": 262144,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/d1.8xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/d1.8xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "instance_vnic:type": "enhanced",
+        "quota:local_disk": "HDD:24:1800:FALSE",
+        "extra_spec:io:persistent_grant": "true",
+        "ecs:performancetype": "diskintensive",
+        "instance_vnic:instance_bandwidth": "10000",
+        "instance_vnic:max_count": "4",
+        "resource_type": "diskintensive"
+      }
+    },
+    {
+      "id": "m1.2xlarge",
+      "name": "m1.2xlarge",
+      "vcpus": "8",
+      "ram": 65536,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/m1.2xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/m1.2xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "6651",
+        "hws:performancetype": "highmem",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c2.4xlarge",
+      "name": "c2.4xlarge",
+      "vcpus": "16",
+      "ram": 32768,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c2.4xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c2.4xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "13301",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c1.8xlarge",
+      "name": "c1.8xlarge",
+      "vcpus": "32",
+      "ram": 32768,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c1.8xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c1.8xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "26603",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "s1.large",
+      "name": "s1.large",
+      "vcpus": "2",
+      "ram": 8192,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/s1.large",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/s1.large",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "1663",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "g1.xlarge",
+      "name": "g1.xlarge",
+      "vcpus": "4",
+      "ram": 8192,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/g1.xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/g1.xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "pci_passthrough:enable_gpu": "true",
+        "ecs:performancetype": "gpu",
+        "resource_type": "vgpu_m60_1q",
+        "pci_passthrough:gpu_specs": "m60_1q:virt:1"
+      }
+    },
+    {
+      "id": "m1.xlarge",
+      "name": "m1.xlarge",
+      "vcpus": "4",
+      "ram": 32768,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/m1.xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/m1.xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "3325",
+        "hws:performancetype": "highmem",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "e1.12xlarge",
+      "name": "e1.12xlarge",
+      "vcpus": "48",
+      "ram": 1024000,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/e1.12xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/e1.12xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "ecs:performancetype": "highmem",
+        "resource_type": "highmemforlargeram"
+      }
+    },
+    {
+      "id": "m1.4xlarge",
+      "name": "m1.4xlarge",
+      "vcpus": "16",
+      "ram": 131072,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/m1.4xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/m1.4xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "13301",
+        "hws:performancetype": "highmem",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c1.4xlarge",
+      "name": "c1.4xlarge",
+      "vcpus": "16",
+      "ram": 16384,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c1.4xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c1.4xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "13301",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "d1.xlarge",
+      "name": "d1.xlarge",
+      "vcpus": "4",
+      "ram": 32768,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/d1.xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/d1.xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "instance_vnic:type": "enhanced",
+        "quota:local_disk": "HDD:3:1800:FALSE",
+        "extra_spec:io:persistent_grant": "true",
+        "ecs:performancetype": "diskintensive",
+        "instance_vnic:instance_bandwidth": "1000",
+        "instance_vnic:max_count": "4",
+        "resource_type": "diskintensive"
+      }
+    },
+    {
+      "id": "s1.xlarge",
+      "name": "s1.xlarge",
+      "vcpus": "4",
+      "ram": 16384,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/s1.xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/s1.xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "3325",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "c1.xlarge",
+      "name": "c1.xlarge",
+      "vcpus": "4",
+      "ram": 4096,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/c1.xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/c1.xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "quota:cpu_reserve": "3325",
+        "hws:performancetype": "normal",
+        "hws:availablezone": "cn-north-1a",
+        "resource_type": "normal"
+      }
+    },
+    {
+      "id": "g1.2xlarge",
+      "name": "g1.2xlarge",
+      "vcpus": "8",
+      "ram": 16384,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/g1.2xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/g1.2xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "pci_passthrough:enable_gpu": "true",
+        "ecs:performancetype": "gpu",
+        "resource_type": "vgpu_m60_1q",
+        "pci_passthrough:gpu_specs": "m60_1q:virt:1"
+      }
+    },
+    {
+      "id": "m1.8xlarge",
+      "name": "m1.8xlarge",
+      "vcpus": "32",
+      "ram": 262144,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/m1.8xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/m1.8xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "ecs:performancetype": "highmem",
+        "resource_type": "highmemforlargeram"
+      }
+    },
+    {
+      "id": "d1.4xlarge",
+      "name": "d1.4xlarge",
+      "vcpus": "16",
+      "ram": 131072,
+      "disk": "0",
+      "swap": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/d1.4xlarge",
+          "type": null
+        },
+        {
+          "rel": "bookmark",
+          "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/d1.4xlarge",
+          "type": null
+        }
+      ],
+      "OS-FLV-EXT-DATA:ephemeral": 0,
+      "rxtx_factor": 1,
+      "OS-FLV-DISABLED:disabled": false,
+      "rxtx_quota": null,
+      "rxtx_cap": null,
+      "os-flavor-access:is_public": true,
+      "os_extra_specs": {
+        "instance_vnic:type": "enhanced",
+        "quota:local_disk": "HDD:12:1800:FALSE",
+        "extra_spec:io:persistent_grant": "true",
+        "ecs:performancetype": "diskintensive",
+        "instance_vnic:instance_bandwidth": "4000",
+        "instance_vnic:max_count": "4",
+        "resource_type": "diskintensive"
+      }
+    }
+  ]
+}

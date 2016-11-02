@@ -1,0 +1,24 @@
+{
+  "flavor": {
+    "name": "physical.s1.large",
+    "links": [
+      {
+        "href": "https://compute.region.cnnorth1.hwclouds.com/v2/c6df6980813f463199d89bd2044a1308/flavors/103",
+        "rel": "self"
+      },
+      {
+        "href": "https://compute.region.cnnorth1.hwclouds.com/c6df6980813f463199d89bd2044a1308/flavors/103",
+        "rel": "bookmark"
+      }
+    ],
+    "ram": 131072,
+    "OS-FLV-DISABLED:disabled": false,
+    "vcpus": 16,
+    "swap": "",
+    "os-flavor-access:is_public": true,
+    "rxtx_factor": 1,
+    "OS-FLV-EXT-DATA:ephemeral": 0,
+    "disk": 3600,
+    "id": "103"
+  }
+}
