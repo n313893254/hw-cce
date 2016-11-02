@@ -1,0 +1,10 @@
+{
+  "volumeAttachments": [
+    {
+      "device": "/dev/sda",
+      "serverId": "aaf8a245-5c71-4224-928c-628350974e99",
+      "id": "be663283-4d1b-4ea4-a44d-7841d15882cd",
+      "volumeId": "be663283-4d1b-4ea4-a44d-7841d15882cd"
+    }
+  ]
+}
