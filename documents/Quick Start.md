@@ -33,13 +33,13 @@
 5.`examples\ECS` 目录下有更多的示例，部分示例可以直接运行，部分需要根据你的后台调整一些参数
 
 
-| 例子文件                                                                                         |   API               |
-| ----                                                                                            | ----------          |
-| [lifecycle-create-cloud-server.js](../examples/ECS/lifecycle-create-cloud-server.js)            | 创建云服务器         |
-| [lifecycle-delete-cloud-server.js](../examples/ECS/lifecycle-delete-cloud-server.js)            | 删除云服务器         |
-| [lifecycle-get-cloud-server.js](../examples/ECS/lifecycle-get-cloud-server.js)                  | 获取云服务器详情     |
-| [lifecycle-list-cloud-servers.js](../examples/ECS/lifecycle-list-cloud-servers.js)              | 获取云服务器列表     |
-| [lifecycle-list-cloud-server-details.js](../examples/ECS/lifecycle-list-cloud-server-details.js)| 获取云服务器详情列表  |
+| 例子文件                                                                                          | API        |
+|--------------------------------------------------------------------------------------------------|------------|
+| [lifecycle-create-cloud-server.js](../examples/ECS/lifecycle-create-cloud-server.js)             | 创建云服务器     |
+| [lifecycle-delete-cloud-server.js](../examples/ECS/lifecycle-delete-cloud-server.js)             | 删除云服务器     |
+| [lifecycle-get-cloud-server.js](../examples/ECS/lifecycle-get-cloud-server.js)                   | 获取云服务器详情   |
+| [lifecycle-list-cloud-servers.js](../examples/ECS/lifecycle-list-cloud-servers.js)               | 获取云服务器列表   |
+| [lifecycle-list-cloud-server-details.js](../examples/ECS/lifecycle-list-cloud-server-details.js) | 获取云服务器详情列表 |
 
 6.更多API接口说明，请参见 API说明文档
 
