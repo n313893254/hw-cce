@@ -10,7 +10,7 @@ var ECSClient = new HW.ECS(config)
 
 var jobId = 'xxx'
 
-ECSClient.getJob(jobId, function (err, response) {
+ECSClient.showEcsJob(jobId, function (err, response) {
   if (!err && response.ok) {
     console.log(JSON.stringify(response.body, null, 2))
   } else {

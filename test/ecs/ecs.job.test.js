@@ -9,13 +9,13 @@ describe('ECS::Job', function () {
   var endpoint = config.endpoint
   var projectId = config.projectId
 
-  describe('Get Job', function () {
-    it('Get Job by id', done => {
-      var responseBody = require('./data/get-job-response.json')
+  describe('show ecs job', function () {
+    it('show Job by id', done => {
+      var responseBody = require('./data/job-show-ecs-job-resp.json')
       var jobId = responseBody.job_id
       var url = `/v1/${projectId}/jobs/${jobId}`
       nock(endpoint).get(url).reply(200, responseBody)
-      client.getJob(jobId, function (err, response) {
+      client.showEcsJob(jobId, function (err, response) {
         (err || !response.ok).should.be.false()
         response.body.should.containDeep(responseBody)
         done()
