@@ -1,0 +1,18 @@
+{
+  "keypairs": [
+    {
+      "keypair": {
+        "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDBqarQ9iX7Am61b1pM13N9v1jWfZzRSsms9G55Yw35CQm+XgWVHvWgGMsH3FU0dxYk6OM+ZgRSu9IMyz9EsRPkBLnN03La4zmX74lW9qbXbqciZBsR3+01TM7ksh6Wwje8+ZSX7ghbtC39wcQe/mPO0sl8WzwG1OqVYQmsXc7NBX5ivczb9XPOQ/g7Q9OFIx/E2DoPxKsFygvhBOih/VTD3HnsiB1ND6UUJbPMd1d/3PII4KQkT7HIdSny/ZikiqOQBPCaxe30kOMdS3Cp5/xcoKFXoVoGK9lT6X89CEsmD9ZnH2d8ymFf6KiOf6ivLvcPyCW6sQQdeUE62pDFuxar Generated-by-Nova\n",
+        "name": "KeyPair-2a39",
+        "fingerprint": "a3:c5:6e:3e:0d:fd:06:03:0a:7f:2f:90:37:8a:2e:0f"
+      }
+    },
+    {
+      "keypair": {
+        "public_key": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAAAgQCTVFCmWNGle5wIStZ21fjfiHz+l77lPPlg57gdoObMr0Weh+TftCNF2FmX/1HlBW3Ie+fiMPEgAxCkWMSVv9SxsdnsepM3Kc6AHeF/saw1IL5dn5pmtg+SvD/H3cZ0VVViP3hcuVti/C1/YTw4A+bikTGfzYnQW1DwDCRxy7rj2Q== RSA-1024",
+        "name": "woo-x230",
+        "fingerprint": "f1:2e:8f:05:06:04:cd:3e:52:45:4c:35:38:41:9b:75"
+      }
+    }
+  ]
+}

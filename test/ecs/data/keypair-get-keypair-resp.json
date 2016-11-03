@@ -1,0 +1,13 @@
+{
+  "keypair": {
+    "public_key": "ssh-rsaAAAAB3NzaC1yc2EAAAADAQABAAAAgQCTVFCmWNGle5wIStZ21fjfiHz+l77lPPlg57gdoObMr0Weh+TftCNF2FmX/1HlBW3Ie+fiMPEgAxCkWMSVv9SxsdnsepM3Kc6AHeF/saw1IL5dn5pmtg+SvD/H3cZ0VVViP3hcuVti/C1/YTw4A+bikTGfzYnQW1DwDCRxy7rj2Q==RSA-1024",
+    "user_id": "e69254f99c5641339b8843db542dafad",
+    "name": "woo-1478165590387",
+    "deleted": false,
+    "created_at": "2016-11-03T09:33:13.138449",
+    "updated_at": null,
+    "fingerprint": "f1:2e:8f:0 5:0 6:0 4:cd:3e:52:45:4c:35:38:41:9b:75",
+    "deleted_at": null,
+    "id": 7819
+  }
+}
