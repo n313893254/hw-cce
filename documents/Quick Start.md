@@ -43,4 +43,16 @@
 
 6.更多API接口说明，请参见 API说明文档
 
+# How to Contribute
+
+1. 在lib下找到对应的接口模块，目前，只有ECS模块，那么对应的接口实现写在ecs目录下。具体的代码样例，请参考其他的接口实现
+
+2. 每个新增的接口，都要有对应的调用示例，对应的目录是 examples。同时，需要编写对应的测试用例，测试用例目录是test。
+
+3. 提供了几个快捷命令
+- `npm test`，执行测试用例（mocha）
+- `npm run coverage` 执行测试用例，并生成覆盖率报告
+- `npm run lint` 代码格式检测
+- `npm run browserify` 会在dist下生成对应的浏览器版本（未测试）
+
 
