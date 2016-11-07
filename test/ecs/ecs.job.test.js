@@ -11,15 +11,23 @@ describe('ECS::Job', function () {
 
   describe('show ecs job', function () {
     it('show Job by id', done => {
-      var responseBody = require('./data/job-show-ecs-job-resp.json')
-      var jobId = responseBody.job_id
+      var respBody = require('./data/job-show-ecs-job-resp.json')
+      var jobId = respBody.job_id
       var url = `/v1/${projectId}/jobs/${jobId}`
-      nock(endpoint).get(url).reply(200, responseBody)
+      nock(endpoint).get(url).reply(200, respBody)
       client.showEcsJob(jobId, function (err, response) {
         (err || !response.ok).should.be.false()
-        response.body.should.containDeep(responseBody)
+        response.body.should.containDeep(respBody)
         done()
       })
+    })
+
+    it('illegal job-id will throw error', () => {
+      client.showEcsJob.bind(client, '').should.throw()
+      client.showEcsJob.bind(client, {}).should.throw()
+      client.showEcsJob.bind(client, []).should.throw()
+      client.showEcsJob.bind(client, null).should.throw()
+      client.showEcsJob.bind(client, new Date()).should.throw()
     })
   })
 })

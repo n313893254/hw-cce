@@ -103,8 +103,8 @@ describe('ECS::Volume', function () {
       client.detachCloudServerVolume(serverId, volumeId, function (err, response) {
         (err || !response.ok).should.be.false()
         response.body.should.containDeep(respBody)
+        done()
       })
-      done()
     })
 
     it('illegal arguments should throw error', () => {

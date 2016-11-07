@@ -1,0 +1,40 @@
+{
+  "subnets": [
+    {
+      "id": "e860e98c-3475-4725-bf6e-6a4956078245",
+      "name": "subnet-2511",
+      "vpcId": "1e162a02-7612-45d8-a1e6-b01d5fde1872",
+      "cidr": "10.10.3.0/24",
+      "gatewayIp": "10.10.3.1",
+      "dhcpEnable": true,
+      "primaryDNS": "114.114.114.114",
+      "secondaryDNS": "114.114.115.115",
+      "status": "ACTIVE",
+      "azId": "ae04cf9d61544df3806a3feeb401b204"
+    },
+    {
+      "id": "c2c7425e-5e35-4767-a524-74a52c217b49",
+      "name": "subnet-c4e5",
+      "vpcId": "1e162a02-7612-45d8-a1e6-b01d5fde1872",
+      "cidr": "10.10.1.0/24",
+      "gatewayIp": "10.10.1.1",
+      "dhcpEnable": true,
+      "primaryDNS": "114.114.114.114",
+      "secondaryDNS": "114.114.115.115",
+      "status": "ACTIVE",
+      "azId": "d573142f24894ef3bd3664de068b44b0"
+    },
+    {
+      "id": "938e53a3-a2dd-47c9-a63b-4bbdd299d430",
+      "name": "subnet-da7a",
+      "vpcId": "1e162a02-7612-45d8-a1e6-b01d5fde1872",
+      "cidr": "10.10.2.0/24",
+      "gatewayIp": "10.10.2.1",
+      "dhcpEnable": true,
+      "primaryDNS": "114.114.114.114",
+      "secondaryDNS": "114.114.115.115",
+      "status": "ACTIVE",
+      "azId": "d573142f24894ef3bd3664de068b44b0"
+    }
+  ]
+}
