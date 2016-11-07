@@ -61,6 +61,72 @@ describe('ECS::Interface', function () {
     })
   })
 
+  describe('attach cloud-server interface', function () {
+    var respBody = require('./data/interface-attach-cloud-server-interface-resp.json')
+    var serverId = 'aaf8a245-5c71-4224-928c-628350974e99'
+    var portId = respBody.interfaceAttachment.port_id
+    var netId = respBody.interfaceAttachment.net_id
+    var fixedIp = respBody.interfaceAttachment.fixed_ips[0].ip_address
+    var url = `/v2/${projectId}/servers/${serverId}/os-interface`
+
+    it('attach cloud-server interface with port-id', done => {
+      var formdata = {
+        'interfaceAttachment': {
+          'port_id': portId
+        }
+      }
+      nock(endpoint).post(url, formdata).reply(200, respBody)
+      client.attachCloudServerInterface(serverId, portId, null, null, function (err, response) {
+        (err || !response.ok).should.be.false()
+        response.body.should.containDeep(respBody)
+        done()
+      })
+    })
+
+    it('attach cloud-server interface with net-id', done => {
+      var formdata = {
+        'interfaceAttachment': {
+          'net_id': netId
+        }
+      }
+      nock(endpoint).post(url, formdata).reply(200, respBody)
+      client.attachCloudServerInterface(serverId, null, netId, null, function (err, response) {
+        (err || !response.ok).should.be.false()
+        response.body.should.containDeep(respBody)
+        done()
+      })
+    })
+
+    it('attach cloud-server interface with net-id & fixed-ip', done => {
+      var formdata = {
+        'interfaceAttachment': {
+          'net_id': netId,
+          'fixed_ips': [{
+            'ip_address': fixedIp
+          }]
+        }
+      }
+      nock(endpoint).post(url, formdata).reply(200, respBody)
+      client.attachCloudServerInterface(serverId, null, netId, fixedIp, function (err, response) {
+        (err || !response.ok).should.be.false()
+        response.body.should.containDeep(respBody)
+        done()
+      })
+    })
+
+    it('illegal argument will throw error', () => {
+      client.attachCloudServerInterface.bind(client, null, null).should.throw()
+      client.attachCloudServerInterface.bind(client, serverId, []).should.throw()
+      client.attachCloudServerInterface.bind(client, serverId, {}).should.throw()
+      client.attachCloudServerInterface.bind(client, serverId, '').should.throw()
+      client.attachCloudServerInterface.bind(client, serverId, null, '').should.throw()
+      client.attachCloudServerInterface.bind(client, serverId, null, []).should.throw()
+      client.attachCloudServerInterface.bind(client, serverId, null, {}).should.throw()
+      client.attachCloudServerInterface.bind(client, serverId, null, true).should.throw()
+      client.attachCloudServerInterface.bind(client, serverId, '').should.throw()
+    })
+  })
+
   describe('batch attach cloud-server interfaces', function () {
     var respBody = require('./data/success-task-response.json')
     var serverId = 'aaf8a245-5c71-4224-928c-628350974e99'
@@ -169,6 +235,47 @@ describe('ECS::Interface', function () {
       client.detachCloudServerInterface.bind(client, serverId, []).should.throw()
       client.detachCloudServerInterface.bind(client, serverId, null).should.throw()
       client.detachCloudServerInterface.bind(client, serverId, new Date()).should.throw()
+    })
+  })
+
+  describe('batch detach cloud-server interface', function () {
+    var serverId = 'aaf8a245-5c71-4224-928c-628350974e99'
+    var ports = ['2df10824-025a-45e3-8fea-304a3ccf65ed', '46328e74-53bf-4144-bfc8-437aef96f665']
+    var url = `/v1/${projectId}/cloudservers/${serverId}/nics/delete`
+    var respBody = require('./data/success-task-response.json')
+
+    it('batch detach cloud-server interface', done => {
+      var formdata = {
+        'nics': [
+          {
+            'id': '2df10824-025a-45e3-8fea-304a3ccf65ed'
+          },
+          {
+            'id': '46328e74-53bf-4144-bfc8-437aef96f665'
+          }
+        ]
+      }
+      nock(endpoint).post(url, formdata).reply(200, respBody)
+      client.detachBatchCloudServerInterface(serverId, ports, function (err, response) {
+        (err || !response.ok).should.be.false()
+        response.body.should.containDeep(respBody)
+        done()
+      })
+    })
+
+    it('illegal argument will throw error', () => {
+      client.detachBatchCloudServerInterface.bind(client, '').should.throw()
+      client.detachBatchCloudServerInterface.bind(client, {}).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, []).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, null).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, new Date()).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, serverId, '').should.throw()
+      client.detachBatchCloudServerInterface.bind(client, serverId, {}).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, serverId, []).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, serverId, null).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, serverId, new Date()).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, serverId, [null]).should.throw()
+      client.detachBatchCloudServerInterface.bind(client, serverId, ['']).should.throw()
     })
   })
 })
