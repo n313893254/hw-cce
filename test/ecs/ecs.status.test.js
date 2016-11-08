@@ -35,8 +35,8 @@ describe('ECS::Status', function () {
       nock(endpoint).put(url, formdata).reply(200, respBody)
       client.modifyCloudServer(serverId, newName, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
   })
 
@@ -62,8 +62,8 @@ describe('ECS::Status', function () {
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.startBatchCloudServers(serverIds, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
   })
 
@@ -93,8 +93,8 @@ describe('ECS::Status', function () {
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.stopBatchCloudServers(serverIds, true, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
 
     it('batch normal stop cloud server', done => {
@@ -107,8 +107,8 @@ describe('ECS::Status', function () {
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.stopBatchCloudServers(serverIds, false, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
   })
 
@@ -138,8 +138,8 @@ describe('ECS::Status', function () {
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.rebootBatchCloudServers(serverIds, true, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
 
     it('batch normal reboot cloud server', done => {
@@ -152,8 +152,8 @@ describe('ECS::Status', function () {
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.rebootBatchCloudServers(serverIds, false, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
   })
 
@@ -176,8 +176,8 @@ describe('ECS::Status', function () {
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.startCloudServer(serverId, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
   })
 
@@ -204,24 +204,24 @@ describe('ECS::Status', function () {
 
     it('force reboot cloud server', done => {
       var formdata = {
-        'reboot': {'type': true}
+        'reboot': {'type': 'HARD'}
       }
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.rebootCloudServer(serverId, true, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
 
     it('normal reboot cloud server', done => {
       var formdata = {
-        'reboot': {'type': false}
+        'reboot': {'type': 'SOFT'}
       }
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.rebootCloudServer(serverId, false, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
   })
 
@@ -248,31 +248,31 @@ describe('ECS::Status', function () {
 
     it('force stop cloud server', done => {
       var formdata = {
-        'os-stop': {'type': true}
+        'os-stop': {'type': 'HARD'}
       }
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.stopCloudServer(serverId, true, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
 
     it('normal stop cloud server', done => {
       var formdata = {
-        'os-stop': {'type': false}
+        'os-stop': {'type': 'SOFT'}
       }
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.stopCloudServer(serverId, false, function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
   })
 
   describe('Resize Cloud Server', function () {
     var serverId = '616fb98f-46ca-475e-917e-2563e5a8cd19'
     var respBody = require('./data/success-task-response.json')
-    var url = `/v2/${projectId}/cloudservers/${serverId}/resize`
+    var url = `/v1/${projectId}/cloudservers/${serverId}/resize`
 
     it('if argument is not legal, throw error', () => {
       client.resizeCloudServer.bind(client, null, null).should.throw()
@@ -295,8 +295,8 @@ describe('ECS::Status', function () {
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.resizeCloudServer(serverId, 'c1.large', function (err, response) {
         (err || !response.ok).should.be.false()
+        done()
       })
-      done()
     })
   })
 })

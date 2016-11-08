@@ -1,5 +1,6 @@
 /**
- * 获取队列任务详情
+ * 查询SSH密钥列表
+ * https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212676.html
  */
 var HW = require('../../index.js')
 
@@ -8,9 +9,7 @@ var config = require('../config.json')
 // 初始化 ECS Client
 var ECSClient = new HW.ECS(config)
 
-var jobId = 'xxx'
-
-ECSClient.getJob(jobId, function (err, response) {
+ECSClient.listKeypairs(function (err, response) {
   if (!err && response.ok) {
     console.log(JSON.stringify(response.body, null, 2))
   } else {

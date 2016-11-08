@@ -1,0 +1,52 @@
+{
+  "interfaceAttachments": [
+    {
+      "port_state": "ACTIVE",
+      "fixed_ips": [
+        {
+          "subnet_id": "43fc5b6d-15fc-485a-a97a-063ab37fa3ed",
+          "ip_address": "10.10.3.10"
+        }
+      ],
+      "port_id": "4b022d6b-74a9-4d39-8678-356d403f985a",
+      "net_id": "e860e98c-3475-4725-bf6e-6a4956078245",
+      "mac_addr": "fa:16:3e:56:f4:9e"
+    },
+    {
+      "port_state": "ACTIVE",
+      "fixed_ips": [
+        {
+          "subnet_id": "f27d51bb-4833-4791-95ec-37eb4e8e0913",
+          "ip_address": "10.10.2.4"
+        }
+      ],
+      "port_id": "70bd1840-c12e-4adc-9de8-58cf451cdfdf",
+      "net_id": "938e53a3-a2dd-47c9-a63b-4bbdd299d430",
+      "mac_addr": "fa:16:3e:34:65:5a"
+    },
+    {
+      "port_state": "ACTIVE",
+      "fixed_ips": [
+        {
+          "subnet_id": "f266fa3e-e603-41a1-8148-4fa19922d6aa",
+          "ip_address": "10.10.1.26"
+        }
+      ],
+      "port_id": "98bcc1ea-0afa-441c-a457-79457112d14e",
+      "net_id": "c2c7425e-5e35-4767-a524-74a52c217b49",
+      "mac_addr": "fa:16:3e:16:4c:3b"
+    },
+    {
+      "port_state": "ACTIVE",
+      "fixed_ips": [
+        {
+          "subnet_id": "43fc5b6d-15fc-485a-a97a-063ab37fa3ed",
+          "ip_address": "10.10.3.5"
+        }
+      ],
+      "port_id": "c26d2a10-c239-4fad-b4a3-ca7710c36320",
+      "net_id": "e860e98c-3475-4725-bf6e-6a4956078245",
+      "mac_addr": "fa:16:3e:0d:c5:93"
+    }
+  ]
+}
