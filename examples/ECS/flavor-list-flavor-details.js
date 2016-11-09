@@ -11,7 +11,7 @@ var config = require('../config.json')
 var ECSClient = new HW.ECS(config)
 
 // 查询条件
-var filters = {sort_key: 'memory_mb2', minDisk: '10', 'xxx': 'xxxs'}
+var filters = {sort_key: 'memory_mb', minDisk: '10', 'xxx': 'xxxs'}
 // 查询云服务器规格详情列表
 ECSClient.listFlavorDetails(filters, function (err, response) {
   if (!err && response.ok) {
