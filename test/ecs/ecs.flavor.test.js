@@ -36,7 +36,17 @@ describe('ECS::Flavor', function () {
     var url = `/v2/${projectId}/flavors/detail`
     it('list flavor details', done => {
       nock(endpoint).get(url).reply(200, respBody)
-      client.listFlavorDetails(function (err, response) {
+      client.listFlavorDetails({}, function (err, response) {
+        (err || !response.ok).should.be.false()
+        response.body.should.containDeep(respBody)
+        done()
+      })
+    })
+
+    it('list flavor details with filter', done => {
+      var filters = {sort_key: 'memory_mb', minDisk: '10'}
+      nock(endpoint).get(url).query(true).reply(200, respBody)
+      client.listFlavorDetails(filters, function (err, response) {
         (err || !response.ok).should.be.false()
         response.body.should.containDeep(respBody)
         done()
