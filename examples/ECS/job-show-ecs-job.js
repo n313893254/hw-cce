@@ -1,5 +1,6 @@
 /**
- * 获取队列任务详情
+ * 查询Job状态
+ * https://support.hwclouds.com/api-ecs/zh-cn_topic_0022225398.html
  */
 var HW = require('../../index.js')
 
