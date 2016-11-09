@@ -1,5 +1,6 @@
 /**
  * 删除云服务器列表例子
+ * https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212679.html
  */
 var HW = require('../../index.js')
 

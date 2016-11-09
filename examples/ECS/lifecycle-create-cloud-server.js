@@ -1,5 +1,6 @@
 /**
  * 创建云服务器列表例子
+ * https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212668.html
  */
 var HW = require('../../index.js')
 

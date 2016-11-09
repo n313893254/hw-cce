@@ -1,6 +1,6 @@
 /**
- * 查询云服务器网卡信息
- * https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212661.html
+ * 查询指定云服务器网卡信息
+ * https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212662.html
  */
 
 var HW = require('../../index.js')

@@ -41,7 +41,7 @@
 | [lifecycle-list-cloud-servers.js](../examples/ECS/lifecycle-list-cloud-servers.js)               | 获取云服务器列表   |
 | [lifecycle-list-cloud-server-details.js](../examples/ECS/lifecycle-list-cloud-server-details.js) | 获取云服务器详情列表 |
 
-6.更多API接口说明，请参见 API说明文档
+6.更多API接口说明，请参见 [API说明文档](./apidoc.md)
 
 # How to Contribute
 

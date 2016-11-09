@@ -2,6 +2,7 @@
 
 本文档主要用于描述 ECS Node SDK 的各个接口的使用方式，更多详细的内容请参照官方的[文档](https://support.hwclouds.com/ecs/index.html)
 
+
 ## 公共说明
 ### 1. 初始化SDK客户端对象
 
@@ -56,57 +57,11 @@ var filters = { limit: 10, 'name': 'example' }
 ECSClient.listCloudServerDetails(filters, callback)
 ```
 
-## 弹性云服务器生命周期管理
+## 各个模块的API接口
 
-### 1. 创建云服务器 ([例子](../examples/ECS/lifecycle-create-cloud-server.js))
+- <a href="./lifecycle-apidoc.md" target="_blank">弹性云服务器生命周期管理</a>
+- <a href="./status-apidoc.md" target="_blank">弹性云服务器状态管理</a>
+- <a href="./flavor-apidoc.md" target="_blank">弹性云服务器规格查询</a>
+- <a href="./interface-apidoc.md" target="_blank">弹性云服务器网卡管理</a>
+- <a href="./lifecycle-apidoc.md" target="_blank">弹性云服务器生命周期管理</a>
 
-```
-ECSClient.createCloudServer(params, callback)
-```
-
-|   参数   | 是否必填 | 说明                 | 例子                                                             |
-|:--------:|:--------:|----------------------|------------------------------------------------------------------|
-|  params  |    是    | 要创建的云服务器配置 | https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212668.html |
-| callback |    是    | 请求回调             |                                                                  |
-
-
-### 2. 删除云服务器 ([例子](../examples/ECS/lifecycle-delete-cloud-server.js))
-
-```
-ECSClient.deleteCloudServer(serverId, deletePublicId, deleteVolume, callback)
-```
-
-| 参数           | 类型     | 必填 | 说明                         | 例子 |
-|----------------|----------|------|------------------------------|------|
-| serverId       | String   | 是   | 要删除的服务器ID             |      |
-| deletePublicId | boolean  | 是   | 是否删除云服务器绑定的弹性IP |      |
-| deleteVolume   | boolean  | 是   | 是否删除云服务器数据盘       |      |
-| callback       | function | 否   | 请求回调                     |      |
-
-
-### 3. 查询云服务器列表 
-
-[例子](../examples/ECS/lifecycle-list-cloud-servers.js)
-[官方文档](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212688.html)
-
-```
-var filters = { limit: 10, 'name': 'example' }
-ECSClient.listCloudServers(filters, callback)
-```
-
-| 参数     | 类型     | 必填 | 说明     | 例子                             |
-|----------|----------|------|----------|----------------------------------|
-| filters  | json     | 否   | 查询条件 | { limit: 10, 'name': 'example' } |
-| callback | function | 否   | 请求回调 |                                  |
-
-filters 参数可设置的属性
-
-| 名称          | 是否必选 | 参数类型        | 说明                               |
-|---------------|----------|-----------------|------------------------------------|
-| changes-since | 否       | String:DateTime | 云服务器上次更新状态的时间戳信息。 |
-| image         | 否       | String          | 镜像ID。                           |
-| flavor        | 否       | String          | 云服务器类型ID。                   |
-| name          | 否       | String          | 云服务器名称。                     |
-| status        | 否       | String          | 云服务器状态。                     |
-| host          | 否       | String          | 主机节点名称。                     |
-| limit         | 否       | Integer         | 查询返回云服务器数量限制。         |
