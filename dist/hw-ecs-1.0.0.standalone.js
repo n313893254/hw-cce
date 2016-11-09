@@ -107,12 +107,13 @@ ECS.prototype.listCloudServerFlavors = function (callback) {
  * @path GET /v2/{project_id}/flavors/detail
  * @see https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212658.html
  * @method listFlavorDetails
+ * @param {json}      filters  condition used to filter result
  * @param {Function}  callback Function to be called when request done
  * @return
  */
-ECS.prototype.listFlavorDetails = function (callback) {
+ECS.prototype.listFlavorDetails = function (filters, callback) {
   var resource = '/v2/' + this.projectId + '/flavors/detail'
-  this.requestor.get(resource, null, callback)
+  this.requestor.get(resource, filters, callback)
 }
 
 /**
@@ -127,7 +128,7 @@ ECS.prototype.listFlavorDetails = function (callback) {
  */
 ECS.prototype.getFlavor = function (flavorId, callback) {
   if (ECS.Utils.String.isBlank(flavorId)) {
-    throw new Error('Argument flavorId must be String')
+    throw new Error('Argument flavorId must be a non-blank String')
   }
   var resource = '/v2/' + this.projectId + '/flavors/' + flavorId
   this.requestor.get(resource, null, callback)
@@ -222,7 +223,7 @@ ECS.prototype.attachCloudServerInterface = function (serverId, portId, netId, fi
   }
 
   if (!valid) {
-    throw new Error('One of Argument `portId` and `netId` must be present as a string')
+    throw new Error('One of Argument `portId` and `netId` must be present as a non-blank string')
   }
 
   var formdata = { 'interfaceAttachment': parameters }
@@ -511,32 +512,39 @@ ECS.prototype.createCloudServer = function (settings, callback) {
  */
 ECS.prototype.deleteCloudServer = function (servers, deletePublicIp, deleteVolume, callback) {
   var resource = '/v1/' + this.projectId + '/cloudservers/delete'
-  if (servers == null || deletePublicIp == null || deleteVolume == null) {
-    throw new Error('Argument servers, deletePublicIp, deleteVolume must be present')
-  } else {
-    // transfer servers to the required structure
-    var _servers = []
-    if (ECS.Utils.String.isString(servers)) {
-      // if user-input is String - single server
-      _servers.push({
-        'id': servers
-      })
-    } else {
-      // if user-input is array - server list
-      _servers = ECS.Utils.map(servers, function (server, key) {
-        return {'id': server}
-      })
-    }
 
-    var formdata = {
-      'servers': _servers,
-      'delete_publicip': deletePublicIp,
-      'delete_volume': deleteVolume
+  if (typeof deletePublicIp !== 'boolean') {
+    throw new Error('Argument `deletePublicIp` is required and should be boolean [true|false]')
+  }
+  if (typeof deleteVolume !== 'boolean') {
+    throw new Error('Argument `deleteVolume` is required and should be boolean [true|false]')
+  }
+
+  // transfer servers to the required structure
+  var _servers = []
+  if (ECS.Utils.String.isNotBlank(servers)) {
+      // if user-input is String - single server
+    _servers.push({
+      'id': servers
+    })
+  } else {
+    if (!Array.isArray(servers) || servers.length === 0) {
+      throw new Error('Argument `servers` should be a not empty Array or a non-blank string')
     }
+    // if user-input is array - server list
+    _servers = ECS.Utils.map(servers, function (server, key) {
+      return {'id': server}
+    })
+  }
+
+  var formdata = {
+    'servers': _servers,
+    'delete_publicip': deletePublicIp,
+    'delete_volume': deleteVolume
+  }
 
     // console.log(formdata)
-    this.requestor.post(resource, formdata, callback)
-  }
+  this.requestor.post(resource, formdata, callback)
 }
 
 /**
@@ -549,7 +557,7 @@ ECS.prototype.deleteCloudServer = function (servers, deletePublicIp, deleteVolum
  */
 ECS.prototype.getCloudServer = function (serverId, callback) {
   if (ECS.Utils.String.isBlank(serverId)) {
-    throw new Error('Argument serverId must be present')
+    throw new Error('Argument serverId must be a non-blank String')
   }
 
   var resource = '/v2/' + this.projectId + '/servers/' + serverId
@@ -753,7 +761,7 @@ ECS.prototype.stopBatchCloudServers = function (serverIds, force, callback) {
  */
 ECS.prototype.submitActionToCloudServer = function (serverId, action, force, callback) {
   if (ECS.Utils.String.isBlank(serverId)) {
-    throw new Error('Argument serverId must be present')
+    throw new Error('Argument serverId must be a non-blank String')
   }
 
   if ((action === 'os-stop' || action === 'reboot')) {
@@ -829,10 +837,10 @@ ECS.prototype.rebootCloudServer = function (serverId, force, callback) {
  */
 ECS.prototype.resizeCloudServer = function (serverId, flavorId, callback) {
   if (ECS.Utils.String.isBlank(serverId)) {
-    throw new Error('Argument `serverId` must be present')
+    throw new Error('Argument `serverId` must be a non-blank String')
   }
   if (ECS.Utils.String.isBlank(flavorId)) {
-    throw new Error('Argument `flavorId` must be present')
+    throw new Error('Argument `flavorId` must be a non-blank String')
   }
 
   var formdata = {
@@ -864,7 +872,7 @@ var ECS = require('./define.js')
  */
 ECS.prototype.getCloudServerVolumes = function (serverId, callback) {
   if (ECS.Utils.String.isBlank(serverId)) {
-    throw new Error('Argument `serverId` must be String')
+    throw new Error('Argument `serverId`must be a non-blank String')
   }
   var resource = '/v2/' + this.projectId + '/servers/' + serverId + '/os-volume_attachments'
   this.requestor.get(resource, null, callback)
@@ -883,11 +891,11 @@ ECS.prototype.getCloudServerVolumes = function (serverId, callback) {
  */
 ECS.prototype.getCloudServerVolume = function (serverId, volumeId, callback) {
   if (ECS.Utils.String.isBlank(serverId)) {
-    throw new Error('Argument `serverId` must be String')
+    throw new Error('Argument `serverId` must be a non-blank String')
   }
 
   if (ECS.Utils.String.isBlank(volumeId)) {
-    throw new Error('Argument `volumeId` must be String')
+    throw new Error('Argument `volumeId` must be a non-blank String')
   }
 
   var resource = '/v2/' + this.projectId + '/servers/' + serverId +
@@ -909,15 +917,15 @@ ECS.prototype.getCloudServerVolume = function (serverId, volumeId, callback) {
  */
 ECS.prototype.attachCloudServerVolume = function (serverId, volumeId, device, callback) {
   if (ECS.Utils.String.isBlank(serverId)) {
-    throw new Error('Argument `serverId` must be String')
+    throw new Error('Argument `serverId` must be a non-blank String')
   }
 
   if (ECS.Utils.String.isBlank(volumeId)) {
-    throw new Error('Argument `volumeId` must be String')
+    throw new Error('Argument `volumeId` must be a non-blank String')
   }
 
   if (ECS.Utils.String.isBlank(device)) {
-    throw new Error('Argument `device` must be String')
+    throw new Error('Argument `device` must be a non-blank String')
   }
 
   var formdata = {
@@ -943,11 +951,11 @@ ECS.prototype.attachCloudServerVolume = function (serverId, volumeId, device, ca
  */
 ECS.prototype.detachCloudServerVolume = function (serverId, volumeId, callback) {
   if (ECS.Utils.String.isBlank(serverId)) {
-    throw new Error('Argument `serverId` must be String')
+    throw new Error('Argument `serverId` must be a non-blank String')
   }
 
   if (ECS.Utils.String.isBlank(volumeId)) {
-    throw new Error('Argument `volumeId` must be String')
+    throw new Error('Argument `volumeId` must be a non-blank String')
   }
 
   var resource = '/v1/' + this.projectId + '/cloudservers/' + serverId + '/detachvolume/' + volumeId

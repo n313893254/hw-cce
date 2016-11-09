@@ -46,6 +46,7 @@ describe('ECS::Lifecycle', function () {
       client.deleteCloudServer.bind(client, null, null, null).should.throw()
       client.deleteCloudServer.bind(client, serverId, null, null).should.throw()
       client.deleteCloudServer.bind(client, serverId, deletePublicIp, null).should.throw()
+      client.deleteCloudServer.bind(client, [], deletePublicIp, deleteVolume).should.throw()
     })
 
     it('Delete single Cloud Server task', done => {
