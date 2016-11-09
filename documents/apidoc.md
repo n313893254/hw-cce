@@ -64,4 +64,8 @@ ECSClient.listCloudServerDetails(filters, callback)
 - <a href="./flavor-apidoc.md" target="_blank">弹性云服务器规格查询</a>
 - <a href="./interface-apidoc.md" target="_blank">弹性云服务器网卡管理</a>
 - <a href="./lifecycle-apidoc.md" target="_blank">弹性云服务器生命周期管理</a>
+- <a href="./volume-apidoc.md" target="_blank">弹性云服务器磁盘管理</a>
+- <a href="./quota-apidoc.md" target="_blank">弹性云服务器租户配额管理</a>
+- <a href="./keypair-apidoc.md" target="_blank">弹性云服务器SSH密钥管理</a>
+- <a href="./job-apidoc.md" target="_blank">弹性云服务器租户配额管理</a>
 

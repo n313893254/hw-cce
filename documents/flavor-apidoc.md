@@ -11,7 +11,7 @@ ECSClient.listFlavorDetails(callback)
 | callback | function |    否    | 请求回调               |      |
 
 
-### 2. 查询云服务器规格详情列表 [例子](../examples/ECS/flavor-list-cloud-server-flavors) [官方文档](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212658.html)
+### 2. 查询云服务器规格详情列表 [例子](../examples/ECS/flavor-list-cloud-server-flavors.js) [官方文档](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212658.html)
 
 ```
 ECSClient.listFlavorDetails(callback)
