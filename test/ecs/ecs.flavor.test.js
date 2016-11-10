@@ -1,5 +1,6 @@
 require('should')
 var nock = require('nock')
+var sinon = require('sinon')
 
 var config = require('./config.js')
 var HW = require('../../index.js')
@@ -24,10 +25,12 @@ describe('ECS::Flavor', function () {
     })
 
     it('illegal flavor id will throw error', () => {
-      client.getFlavor.bind(client, null).should.throw()
-      client.getFlavor.bind(client, '').should.throw()
-      client.getFlavor.bind(client, []).should.throw()
-      client.getFlavor.bind(client, {}).should.throw()
+      var callback = sinon.spy()
+      client.getFlavor(null, callback)
+      client.getFlavor('', callback)
+      client.getFlavor([], callback)
+      client.getFlavor({}, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
   })
 

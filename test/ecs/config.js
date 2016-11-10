@@ -1,3 +1,5 @@
+// disable console error global when running mocha test
+console.error = function () {}
 module.exports = {
   'ak': 'ThisIsFakeAk',
   'sk': 'ThisIsFakeSK',
