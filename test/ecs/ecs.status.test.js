@@ -1,5 +1,6 @@
 require('should')
 var nock = require('nock')
+var sinon = require('sinon')
 
 var config = require('./config.js')
 var HW = require('../../index.js')
@@ -25,10 +26,11 @@ describe('ECS::Status', function () {
     }
 
     it('if any argument is not present, throw error', () => {
-      client.modifyCloudServer.bind(client, null).should.throw()
-      client.modifyCloudServer.bind(client, null, null).should.throw()
-      client.modifyCloudServer.bind(client, serverId, null).should.throw()
-      client.modifyCloudServer.bind(client, null, newName).should.throw()
+      var callback = sinon.spy()
+      client.modifyCloudServer(null, null, callback)
+      client.modifyCloudServer(serverId, null, callback)
+      client.modifyCloudServer(null, newName, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('modify name successfully', done => {
@@ -45,11 +47,12 @@ describe('ECS::Status', function () {
     var respBody = require('./data/success-task-response.json')
 
     it('if serverId is not legal, throw error', () => {
-      client.startBatchCloudServers.bind(client).should.throw()
-      client.startBatchCloudServers.bind(client, null).should.throw()
-      client.startBatchCloudServers.bind(client, 'xxxxx').should.throw()
-      client.startBatchCloudServers.bind(client, {}).should.throw()
-      client.startBatchCloudServers.bind(client, []).should.throw()
+      var callback = sinon.spy()
+      client.startBatchCloudServers(null, callback)
+      client.startBatchCloudServers('xxxxx', callback)
+      client.startBatchCloudServers({}, callback)
+      client.startBatchCloudServers([], callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('batch start cloud server successfully', done => {
@@ -73,14 +76,15 @@ describe('ECS::Status', function () {
     var serverIds = ['616fb98f-46ca-475e-917e-2563e5a8cd19', '726fb98f-46ca-475e-917e-2563e5a8cd20']
 
     it('if argument is not legal, throw error', () => {
-      client.stopBatchCloudServers.bind(client, null, true).should.throw()
-      client.stopBatchCloudServers.bind(client, 'xxxxx', true).should.throw()
-      client.stopBatchCloudServers.bind(client, {}, true).should.throw()
-      client.stopBatchCloudServers.bind(client, [], true).should.throw()
-      client.stopBatchCloudServers.bind(client, serverIds).should.throw()
-      client.stopBatchCloudServers.bind(client, serverIds, '').should.throw()
-      client.stopBatchCloudServers.bind(client, serverIds, 1).should.throw()
-      client.stopBatchCloudServers.bind(client, serverIds, 0).should.throw()
+      var callback = sinon.spy()
+      client.stopBatchCloudServers(null, true, callback)
+      client.stopBatchCloudServers('xxxxx', true, callback)
+      client.stopBatchCloudServers({}, true, callback)
+      client.stopBatchCloudServers([], true, callback)
+      client.stopBatchCloudServers(serverIds, '', callback)
+      client.stopBatchCloudServers(serverIds, 1, callback)
+      client.stopBatchCloudServers(serverIds, 0, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('batch force stop cloud server', done => {
@@ -118,14 +122,15 @@ describe('ECS::Status', function () {
     var serverIds = ['616fb98f-46ca-475e-917e-2563e5a8cd19', '726fb98f-46ca-475e-917e-2563e5a8cd20']
 
     it('if argument is not legal, throw error', () => {
-      client.rebootBatchCloudServers.bind(client, null, true).should.throw()
-      client.rebootBatchCloudServers.bind(client, 'xxxxx', true).should.throw()
-      client.rebootBatchCloudServers.bind(client, {}, true).should.throw()
-      client.rebootBatchCloudServers.bind(client, [], true).should.throw()
-      client.rebootBatchCloudServers.bind(client, serverIds).should.throw()
-      client.rebootBatchCloudServers.bind(client, serverIds, '').should.throw()
-      client.rebootBatchCloudServers.bind(client, serverIds, 1).should.throw()
-      client.rebootBatchCloudServers.bind(client, serverIds, 0).should.throw()
+      var callback = sinon.spy()
+      client.rebootBatchCloudServers(null, true, callback)
+      client.rebootBatchCloudServers('xxxxx', true, callback)
+      client.rebootBatchCloudServers({}, true, callback)
+      client.rebootBatchCloudServers([], true, callback)
+      client.rebootBatchCloudServers(serverIds, '', callback)
+      client.rebootBatchCloudServers(serverIds, 1, callback)
+      client.rebootBatchCloudServers(serverIds, 0, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('batch force reboot cloud server', done => {
@@ -163,10 +168,12 @@ describe('ECS::Status', function () {
     var url = `/v2/${projectId}/servers/${serverId}/action`
 
     it('if argument is not legal, throw error', () => {
-      client.startCloudServer.bind(client, null).should.throw()
-      client.startCloudServer.bind(client, '').should.throw()
-      client.startCloudServer.bind(client, {}).should.throw()
-      client.startCloudServer.bind(client, []).should.throw()
+      var callback = sinon.spy()
+      client.startCloudServer(null, callback)
+      client.startCloudServer('', callback)
+      client.startCloudServer({}, callback)
+      client.startCloudServer([], callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('start cloud server', done => {
@@ -187,19 +194,21 @@ describe('ECS::Status', function () {
     var url = `/v2/${projectId}/servers/${serverId}/action`
 
     it('if argument is not legal, throw error', () => {
-      client.rebootCloudServer.bind(client, null, null).should.throw()
-      client.rebootCloudServer.bind(client, null, true).should.throw()
-      client.rebootCloudServer.bind(client, '', true).should.throw()
-      client.rebootCloudServer.bind(client, {}, true).should.throw()
-      client.rebootCloudServer.bind(client, [], true).should.throw()
-      client.rebootCloudServer.bind(client, null, false).should.throw()
-      client.rebootCloudServer.bind(client, '', false).should.throw()
-      client.rebootCloudServer.bind(client, {}, false).should.throw()
-      client.rebootCloudServer.bind(client, [], false).should.throw()
-      client.rebootCloudServer.bind(client, serverId, null).should.throw()
-      client.rebootCloudServer.bind(client, serverId, '').should.throw()
-      client.rebootCloudServer.bind(client, serverId, {}).should.throw()
-      client.rebootCloudServer.bind(client, serverId, []).should.throw()
+      var callback = sinon.spy()
+      client.rebootCloudServer(null, null, callback)
+      client.rebootCloudServer(null, true, callback)
+      client.rebootCloudServer('', true, callback)
+      client.rebootCloudServer({}, true, callback)
+      client.rebootCloudServer([], true, callback)
+      client.rebootCloudServer(null, false, callback)
+      client.rebootCloudServer('', false, callback)
+      client.rebootCloudServer({}, false, callback)
+      client.rebootCloudServer([], false, callback)
+      client.rebootCloudServer(serverId, null, callback)
+      client.rebootCloudServer(serverId, '', callback)
+      client.rebootCloudServer(serverId, {}, callback)
+      client.rebootCloudServer(serverId, [], callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('force reboot cloud server', done => {
@@ -231,19 +240,21 @@ describe('ECS::Status', function () {
     var url = `/v2/${projectId}/servers/${serverId}/action`
 
     it('if argument is not legal, throw error', () => {
-      client.stopCloudServer.bind(client, null, null).should.throw()
-      client.stopCloudServer.bind(client, null, true).should.throw()
-      client.stopCloudServer.bind(client, '', true).should.throw()
-      client.stopCloudServer.bind(client, {}, true).should.throw()
-      client.stopCloudServer.bind(client, [], true).should.throw()
-      client.stopCloudServer.bind(client, null, false).should.throw()
-      client.stopCloudServer.bind(client, '', false).should.throw()
-      client.stopCloudServer.bind(client, {}, false).should.throw()
-      client.stopCloudServer.bind(client, [], false).should.throw()
-      client.stopCloudServer.bind(client, serverId, null).should.throw()
-      client.stopCloudServer.bind(client, serverId, '').should.throw()
-      client.stopCloudServer.bind(client, serverId, {}).should.throw()
-      client.stopCloudServer.bind(client, serverId, []).should.throw()
+      var callback = sinon.spy()
+      client.stopCloudServer(null, null, callback)
+      client.stopCloudServer(null, true, callback)
+      client.stopCloudServer('', true, callback)
+      client.stopCloudServer({}, true, callback)
+      client.stopCloudServer([], true, callback)
+      client.stopCloudServer(null, false, callback)
+      client.stopCloudServer('', false, callback)
+      client.stopCloudServer({}, false, callback)
+      client.stopCloudServer([], false, callback)
+      client.stopCloudServer(serverId, null, callback)
+      client.stopCloudServer(serverId, '', callback)
+      client.stopCloudServer(serverId, {}, callback)
+      client.stopCloudServer(serverId, [], callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('force stop cloud server', done => {
@@ -275,15 +286,17 @@ describe('ECS::Status', function () {
     var url = `/v1/${projectId}/cloudservers/${serverId}/resize`
 
     it('if argument is not legal, throw error', () => {
-      client.resizeCloudServer.bind(client, null, null).should.throw()
-      client.resizeCloudServer.bind(client, null, true).should.throw()
-      client.resizeCloudServer.bind(client, '', true).should.throw()
-      client.resizeCloudServer.bind(client, {}, true).should.throw()
-      client.resizeCloudServer.bind(client, [], true).should.throw()
-      client.resizeCloudServer.bind(client, serverId, null).should.throw()
-      client.resizeCloudServer.bind(client, serverId, '').should.throw()
-      client.resizeCloudServer.bind(client, serverId, {}).should.throw()
-      client.resizeCloudServer.bind(client, serverId, []).should.throw()
+      var callback = sinon.spy()
+      client.resizeCloudServer(null, null, callback)
+      client.resizeCloudServer(null, true, callback)
+      client.resizeCloudServer('', true, callback)
+      client.resizeCloudServer({}, true, callback)
+      client.resizeCloudServer([], true, callback)
+      client.resizeCloudServer(serverId, null, callback)
+      client.resizeCloudServer(serverId, '', callback)
+      client.resizeCloudServer(serverId, {}, callback)
+      client.resizeCloudServer(serverId, [], callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('resize cloud server', done => {

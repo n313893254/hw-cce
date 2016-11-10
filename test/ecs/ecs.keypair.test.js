@@ -1,5 +1,6 @@
 require('should')
 var nock = require('nock')
+var sinon = require('sinon')
 
 var config = require('./config.js')
 var HW = require('../../index.js')
@@ -23,10 +24,12 @@ describe('ECS::Keypair', function () {
     })
 
     it('illegal keypair name should throw error', () => {
-      client.getKeypair.bind(client, null).should.throw()
-      client.getKeypair.bind(client, '').should.throw()
-      client.getKeypair.bind(client, []).should.throw()
-      client.getKeypair.bind(client, {}).should.throw()
+      var callback = sinon.spy()
+      client.getKeypair(null, callback)
+      client.getKeypair('', callback)
+      client.getKeypair([], callback)
+      client.getKeypair({}, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
   })
 
@@ -66,15 +69,18 @@ describe('ECS::Keypair', function () {
     })
 
     it('illegal keypair name should throw error', () => {
-      client.createKeypair.bind(client, null).should.throw()
-      client.createKeypair.bind(client, null, null).should.throw()
-      client.createKeypair.bind(client, '', null).should.throw()
-      client.createKeypair.bind(client, '', '').should.throw()
-      client.createKeypair.bind(client, '', []).should.throw()
-      client.createKeypair.bind(client, '', {}).should.throw()
-      client.createKeypair.bind(client, keypairName, '').should.throw()
-      client.createKeypair.bind(client, keypairName, []).should.throw()
-      client.createKeypair.bind(client, keypairName, {}).should.throw()
+      var callback = sinon.spy()
+      client.createKeypair(null, null, callback)
+      client.createKeypair('', null, callback)
+      client.createKeypair('', '', callback)
+      client.createKeypair('', [], callback)
+      client.createKeypair('', {}, callback)
+      client.createKeypair({}, null, callback)
+      client.createKeypair([], null, callback)
+      client.createKeypair(keypairName, '', callback)
+      client.createKeypair(keypairName, [], callback)
+      client.createKeypair(keypairName, {}, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
   })
 
@@ -92,11 +98,12 @@ describe('ECS::Keypair', function () {
     })
 
     it('illegal keypair name should throw error', () => {
-      client.deleteKeypair.bind(client).should.throw()
-      client.deleteKeypair.bind(client, null).should.throw()
-      client.deleteKeypair.bind(client, '').should.throw()
-      client.deleteKeypair.bind(client, []).should.throw()
-      client.deleteKeypair.bind(client, {}).should.throw()
+      var callback = sinon.spy()
+      client.deleteKeypair(null, callback)
+      client.deleteKeypair('', callback)
+      client.deleteKeypair([], callback)
+      client.deleteKeypair({}, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
   })
 

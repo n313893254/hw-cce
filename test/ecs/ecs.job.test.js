@@ -1,5 +1,6 @@
 require('should')
 var nock = require('nock')
+var sinon = require('sinon')
 
 var config = require('./config.js')
 var HW = require('../../index.js')
@@ -23,11 +24,13 @@ describe('ECS::Job', function () {
     })
 
     it('illegal job-id will throw error', () => {
-      client.showEcsJob.bind(client, '').should.throw()
-      client.showEcsJob.bind(client, {}).should.throw()
-      client.showEcsJob.bind(client, []).should.throw()
-      client.showEcsJob.bind(client, null).should.throw()
-      client.showEcsJob.bind(client, new Date()).should.throw()
+      var callback = sinon.spy()
+      client.showEcsJob('', callback)
+      client.showEcsJob({}, callback)
+      client.showEcsJob([], callback)
+      client.showEcsJob(null, callback)
+      client.showEcsJob(new Date(), callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
   })
 })
