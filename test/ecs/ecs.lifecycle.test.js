@@ -43,12 +43,11 @@ describe('ECS::Lifecycle', function () {
 
     it('if any argument is not present, throw error', () => {
       var callback = sinon.spy()
-      client.deleteCloudServer(null)
-      client.deleteCloudServer(null, null)
-      client.deleteCloudServer(null, null, null)
-      client.deleteCloudServer(serverId, null, null)
-      client.deleteCloudServer(serverId, deletePublicIp, null)
-      client.deleteCloudServer([], deletePublicIp, deleteVolume)
+      client.deleteCloudServer(null, null, null, callback)
+      client.deleteCloudServer(serverId, null, null, callback)
+      client.deleteCloudServer(serverId, deletePublicIp, null, callback)
+      client.deleteCloudServer([], deletePublicIp, deleteVolume, callback)
+      client.deleteCloudServer([''], deletePublicIp, deleteVolume, callback)
       callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
