@@ -10,7 +10,7 @@ var config = require('../config.json')
 // 初始化 ECS Client
 var ECSClient = new HW.ECS(config)
 
-ECSClient.listCloudServers({limit: 5, name: 'example'}, function (err, response) {
+ECSClient.listCloudServers({limit: 5}, function (err, response) {
   if (!err && response.ok) {
     // 获取最多5个名称包含 example的云服务列表
     var servers = response.body.servers
@@ -19,6 +19,8 @@ ECSClient.listCloudServers({limit: 5, name: 'example'}, function (err, response)
       return server.id
     })
 
+    // serverIds = ['33e19653-0f87-40ba-a13b-17727cc989e1', 'f479cc36-a510-4d69-b433-6960c1b99f01',
+    //   '89351b6c-3ffd-497d-8f06-822ecfbedab1']
     // 是否强制关机
     var forceStop = false
     // 批量重启这几个云服务器

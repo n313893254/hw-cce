@@ -114,6 +114,20 @@ describe('ECS::Status', function () {
         done()
       })
     })
+
+    it('batch stop cloud server by default', done => {
+      var formdata = {
+        'os-stop': {
+          'type': 'SOFT',
+          'servers': getServers(serverIds)
+        }
+      }
+      nock(endpoint).post(url, formdata).reply(200, respBody)
+      client.stopBatchCloudServers(serverIds, null, function (err, response) {
+        (err || !response.ok).should.be.false()
+        done()
+      })
+    })
   })
 
   describe('Batch Reboot Cloud Server', function () {
@@ -127,6 +141,7 @@ describe('ECS::Status', function () {
       client.rebootBatchCloudServers('xxxxx', true, callback)
       client.rebootBatchCloudServers({}, true, callback)
       client.rebootBatchCloudServers([], true, callback)
+      client.rebootBatchCloudServers([], false, callback)
       client.rebootBatchCloudServers(serverIds, '', callback)
       client.rebootBatchCloudServers(serverIds, 1, callback)
       client.rebootBatchCloudServers(serverIds, 0, callback)
@@ -156,6 +171,20 @@ describe('ECS::Status', function () {
       }
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.rebootBatchCloudServers(serverIds, false, function (err, response) {
+        (err || !response.ok).should.be.false()
+        done()
+      })
+    })
+
+    it('batch reboot cloud server by default', done => {
+      var formdata = {
+        'reboot': {
+          'type': 'SOFT',
+          'servers': getServers(serverIds)
+        }
+      }
+      nock(endpoint).post(url, formdata).reply(200, respBody)
+      client.rebootBatchCloudServers(serverIds, null, function (err, response) {
         (err || !response.ok).should.be.false()
         done()
       })
@@ -204,7 +233,6 @@ describe('ECS::Status', function () {
       client.rebootCloudServer('', false, callback)
       client.rebootCloudServer({}, false, callback)
       client.rebootCloudServer([], false, callback)
-      client.rebootCloudServer(serverId, null, callback)
       client.rebootCloudServer(serverId, '', callback)
       client.rebootCloudServer(serverId, {}, callback)
       client.rebootCloudServer(serverId, [], callback)
@@ -232,6 +260,17 @@ describe('ECS::Status', function () {
         done()
       })
     })
+
+    it('reboot cloud server by default', done => {
+      var formdata = {
+        'reboot': {'type': 'SOFT'}
+      }
+      nock(endpoint).post(url, formdata).reply(200, respBody)
+      client.rebootCloudServer(serverId, null, function (err, response) {
+        (err || !response.ok).should.be.false()
+        done()
+      })
+    })
   })
 
   describe('Stop Cloud Server', function () {
@@ -250,7 +289,6 @@ describe('ECS::Status', function () {
       client.stopCloudServer('', false, callback)
       client.stopCloudServer({}, false, callback)
       client.stopCloudServer([], false, callback)
-      client.stopCloudServer(serverId, null, callback)
       client.stopCloudServer(serverId, '', callback)
       client.stopCloudServer(serverId, {}, callback)
       client.stopCloudServer(serverId, [], callback)
@@ -274,6 +312,17 @@ describe('ECS::Status', function () {
       }
       nock(endpoint).post(url, formdata).reply(200, respBody)
       client.stopCloudServer(serverId, false, function (err, response) {
+        (err || !response.ok).should.be.false()
+        done()
+      })
+    })
+
+    it('stop cloud server by default', done => {
+      var formdata = {
+        'os-stop': {'type': 'SOFT'}
+      }
+      nock(endpoint).post(url, formdata).reply(200, respBody)
+      client.stopCloudServer(serverId, null, function (err, response) {
         (err || !response.ok).should.be.false()
         done()
       })

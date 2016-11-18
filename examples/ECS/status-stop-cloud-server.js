@@ -11,8 +11,8 @@ var config = require('../config.json')
 var ECSClient = new HW.ECS(config)
 
 // 是否强制关机
-var forceStop = true
-var serverId = '89351b6c-3ffd-497d-8f06-822ecfbedab1' // 改成想要操作的云服务器ID
+var forceStop = null
+var serverId = '33e19653-0f87-40ba-a13b-17727cc989e1' // 改成想要操作的云服务器ID
 ECSClient.stopCloudServer(serverId, forceStop, function (err, response) {
   if (!err && response.ok) {
     console.log(JSON.stringify(response.body, null, 2))
