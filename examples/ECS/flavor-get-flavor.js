@@ -11,7 +11,7 @@ var config = require('../config.json')
 var ECSClient = new HW.ECS(config)
 
 // 查询云服务器规格详情列表
-ECSClient.listFlavorDetails(function (err, response) {
+ECSClient.listFlavorDetails({}, function (err, response) {
   if (!err && response.ok) {
     var flavors = response.body.flavors
     var flavorId = flavors[0].id  // 获取flavorId
