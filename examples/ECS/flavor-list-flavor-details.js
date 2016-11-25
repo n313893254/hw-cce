@@ -10,8 +10,10 @@ var config = require('../config.json')
 // 初始化 ECS Client
 var ECSClient = new HW.ECS(config)
 
+// 查询条件
+var filters = {sort_key: 'memory_mb', minDisk: '10', 'xxx': 'xxxs'}
 // 查询云服务器规格详情列表
-ECSClient.listFlavorDetails(function (err, response) {
+ECSClient.listFlavorDetails(filters, function (err, response) {
   if (!err && response.ok) {
     console.log(JSON.stringify(response.body, null, 2))
   } else {

@@ -59,16 +59,19 @@ var formdata = {
 ### 2. 删除云服务器 [例子](../examples/ECS/lifecycle-delete-cloud-server.js) [官方文档](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212679.html)
 
 ```
-ECSClient.deleteCloudServer(serverId, deletePublicId, deleteVolume, callback)
+var servers = ['server-id-1', 'server-id-2'] // servers可以是数组，包含多个需要删除的server
+var servers = 'server-id-1'                  // servers也可以是string，只删除单个server     
+ECSClient.deleteCloudServer(servers, deletePublicId, deleteVolume, callback)
 ```
 
-| 参数           | 类型     | 必填 | 说明                         | 例子 |
-|:--------------:|:--------:|:----:|------------------------------|------|
-| serverId       | String   | 是   | 要删除的服务器ID             |      |
-| deletePublicId | boolean  | 是   | 是否删除云服务器绑定的弹性IP |      |
-| deleteVolume   | boolean  | 是   | 是否删除云服务器数据盘       |      |
-| callback       | function | 否   | 请求回调                     |      |
+|      参数      |     类型     | 必填 | 说明                         | 例子                         |
+|:--------------:|:------------:|:----:|------------------------------|------------------------------|
+|     servers    | String,array |  是  | 要删除的服务器ID             | 既可以是数组，也可以是string |
+| deletePublicId |    boolean   |  是  | 是否删除云服务器绑定的弹性IP |                              |
+|  deleteVolume  |    boolean   |  是  | 是否删除云服务器数据盘       |                              |
+|    callback    |   function   |  否  | 请求回调                     |                              |
 
+> servers可以是数组，包含多个需要删除的server-id，也可以是string，只删除单个server  
 
 ### 3. 查询云服务器列表 [例子](../examples/ECS/lifecycle-list-cloud-servers.js) [官方文档](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212688.html)
 

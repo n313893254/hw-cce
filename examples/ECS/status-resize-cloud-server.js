@@ -11,6 +11,7 @@ var config = require('../config.json')
 var ECSClient = new HW.ECS(config)
 
 var flavorId = 'c1.large' // http://support.hwclouds.com/usermanual-ecs/zh-cn_topic_0035470096.html
+// var flavorId = ''
 var serverId = '89351b6c-3ffd-497d-8f06-822ecfbedab1' // 改成想要操作的云服务器ID
 
 // 注意需要先关闭服务器，才能进行变更规格操作

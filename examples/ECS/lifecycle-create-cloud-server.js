@@ -24,6 +24,16 @@ var formdata = {
     'root_volume': {
       'volumetype': 'SSD'
     },
+    'data_volumes': [
+      {
+        'volumetype': 'SATA',
+        'size': 100
+      },
+      {
+        'volumetype': 'SSD',
+        'size': 100
+      }
+    ],
     'flavorRef': flavorId,
     'personality': [
       {
@@ -40,6 +50,9 @@ var formdata = {
     'nics': [
       {
         'subnet_id': subnetId
+      },
+      {
+        'subnet_id': 'e860e98c-3475-4725-bf6e-6a4956078245'
       }
     ],
     // 'key_name': 'sshkey-123',

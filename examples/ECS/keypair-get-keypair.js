@@ -16,7 +16,7 @@ ECSClient.listKeypairs(function (err, response) {
     var keypair0 = keypairs.length > 0 && keypairs[0].keypair.name
     if (keypair0) {
       console.log('try to get keypair detail : ' + keypair0)
-      // 删除 ssh keypair
+      // 获取 ssh keypair
       ECSClient.getKeypair(keypair0, function (err, response) {
         if (!err && response.ok) {
           console.log(response.body)

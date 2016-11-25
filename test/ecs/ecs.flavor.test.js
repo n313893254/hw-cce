@@ -1,5 +1,6 @@
 require('should')
 var nock = require('nock')
+var sinon = require('sinon')
 
 var config = require('./config.js')
 var HW = require('../../index.js')
@@ -24,10 +25,12 @@ describe('ECS::Flavor', function () {
     })
 
     it('illegal flavor id will throw error', () => {
-      client.getFlavor.bind(client, null).should.throw()
-      client.getFlavor.bind(client, '').should.throw()
-      client.getFlavor.bind(client, []).should.throw()
-      client.getFlavor.bind(client, {}).should.throw()
+      var callback = sinon.spy()
+      client.getFlavor(null, callback)
+      client.getFlavor('', callback)
+      client.getFlavor([], callback)
+      client.getFlavor({}, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
   })
 
@@ -36,7 +39,17 @@ describe('ECS::Flavor', function () {
     var url = `/v2/${projectId}/flavors/detail`
     it('list flavor details', done => {
       nock(endpoint).get(url).reply(200, respBody)
-      client.listFlavorDetails(function (err, response) {
+      client.listFlavorDetails({}, function (err, response) {
+        (err || !response.ok).should.be.false()
+        response.body.should.containDeep(respBody)
+        done()
+      })
+    })
+
+    it('list flavor details with filter', done => {
+      var filters = {sort_key: 'memory_mb', minDisk: '10'}
+      nock(endpoint).get(url).query(true).reply(200, respBody)
+      client.listFlavorDetails(filters, function (err, response) {
         (err || !response.ok).should.be.false()
         response.body.should.containDeep(respBody)
         done()

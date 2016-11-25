@@ -1,6 +1,6 @@
 require('should')
 
-var config = require('./config.js')
+var sinon = require('sinon')
 var HW = require('../../index.js')
 
 describe('ECS::namespace define', function () {
@@ -26,5 +26,18 @@ describe('ECS::namespace define', function () {
     ECS.endpoint.should.eql(endpoint)
     ECS.service.should.eql(service)
     ECS.region.should.eql(region)
+  })
+
+  it('validated should handle exception', () => {
+    var errorMsg = 'should passed to callback function'
+    var ECSClient = new HW.ECS({ 'ak': 'ak', 'sk': 'sk', 'projectId': 'projectId' })
+
+    var stub = sinon.stub()
+    stub.throws(new Error(errorMsg))
+    ECSClient.validated(stub, function (error, response) {
+      (error === null).should.be.false()
+      error.should.be.an.instanceof(Error)
+      error.message.should.eql(errorMsg)
+    })
   })
 })

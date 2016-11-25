@@ -14,11 +14,12 @@ ECSClient.listFlavorDetails(callback)
 ### 2. 查询云服务器规格详情列表 [例子](../examples/ECS/flavor-list-cloud-server-flavors.js) [官方文档](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212658.html)
 
 ```
-ECSClient.listFlavorDetails(callback)
+ECSClient.listFlavorDetails(filters, callback)
 ```
 
 |   参数   |   类型   | 是否必填 | 说明                   | 例子 |
 |:--------:|:--------:|:--------:|------------------------|------|
+| filters  | json     |    否    | 查询条件               |      |
 | callback | function |    否    | 请求回调               |      |
 
 ### 3. 启动云服务器 [例子](../examples/ECS/flavor-get-flavor.js) [官方文档](https://support.hwclouds.com/api-ecs/zh-cn_topic_0020212659.html)

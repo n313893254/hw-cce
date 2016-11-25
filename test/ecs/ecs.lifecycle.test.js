@@ -1,5 +1,6 @@
 require('should')
 var nock = require('nock')
+var sinon = require('sinon')
 
 var config = require('./config.js')
 var HW = require('../../index.js')
@@ -41,11 +42,13 @@ describe('ECS::Lifecycle', function () {
     }
 
     it('if any argument is not present, throw error', () => {
-      client.deleteCloudServer.bind(client, null).should.throw()
-      client.deleteCloudServer.bind(client, null, null).should.throw()
-      client.deleteCloudServer.bind(client, null, null, null).should.throw()
-      client.deleteCloudServer.bind(client, serverId, null, null).should.throw()
-      client.deleteCloudServer.bind(client, serverId, deletePublicIp, null).should.throw()
+      var callback = sinon.spy()
+      client.deleteCloudServer(null, null, null, callback)
+      client.deleteCloudServer(serverId, null, null, callback)
+      client.deleteCloudServer(serverId, deletePublicIp, null, callback)
+      client.deleteCloudServer([], deletePublicIp, deleteVolume, callback)
+      client.deleteCloudServer([''], deletePublicIp, deleteVolume, callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
 
     it('Delete single Cloud Server task', done => {
@@ -81,9 +84,13 @@ describe('ECS::Lifecycle', function () {
     })
 
     it('without server-id argument will throw error', () => {
-      client.getCloudServer.bind(client, null).should.throw()
-      client.getCloudServer.bind(client, '').should.throw()
-      client.getCloudServer.bind(client, '  ').should.throw()
+      var callback = sinon.spy()
+      client.getCloudServer(null, callback)
+      client.getCloudServer('', callback)
+      client.getCloudServer('  ', callback)
+      client.getCloudServer({}, callback)
+      client.getCloudServer([], callback)
+      callback.alwaysCalledWithMatch(sinon.match.instanceOf(Error), null)
     })
   })
 
