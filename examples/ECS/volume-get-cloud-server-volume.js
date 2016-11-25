@@ -10,7 +10,7 @@ var config = require('../config.json')
 var ECSClient = new HW.ECS(config)
 
 // 这个API似乎有点多余，getCloudServerVolumes API中已经能取到所有的磁盘信息
-var serverId = 'aaf8a245-5c71-4224-928c-628350974e99'  // 改成你的云服务ID
+var serverId = ''  // 改成你的云服务ID
 var volumeId = 'be663283-4d1b-4ea4-a44d-7841d15882cd'  // 改成你的磁盘ID
 ECSClient.getCloudServerVolume(serverId, volumeId, function (err, response) {
   if (!err && response.ok) {
