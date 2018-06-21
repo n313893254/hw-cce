@@ -57,16 +57,17 @@ var Utils = require('../utils.js')
  */
 var ECS = function (options) {
   // validate options
-  if (!options.ak || !options.sk || !options.projectId) {
+  if (!options.ak || !options.sk || !options.projectId || !options.region || !options.endpoint || !options.toSignedHost) {
     var error = 'Could not construct HW.ECS -> option `ak`, `sk`, `projectId` must be present'
     throw new Error(error)
   }
 
   // initial ECS options
   var _options = Object.assign({
-    'endpoint': 'https://ecs.cn-north-1.myhwclouds.com',
-    'service': 'ecs',
-    'region': 'cn-north-1'
+    'endpoint': `https://vpc.cn-north-1.myhwclouds.com`,
+    'service': 'vpc',
+    'region': 'cn-north-1',
+    'toSignedHost': 'vpc.cn-north-1.myhwclouds.com',
   }, options)
 
   // merge options to ECS instance
@@ -118,8 +119,8 @@ ECS.prototype.logging = function (callback, apiName) {
           'request on': startOn,
           'response on': endOn,
           'http status': response.status,
-          'request path': response.request.url,
-          'request data': response.request._data || {},
+          'request path': response.request && response.request.url || '',
+          'request data': response.request && response.request._data || {},
           'response data': response.body
         }
 
@@ -1386,10 +1387,7 @@ class V4 {
    * @return {Array}
    */
   getRequestHeaders (request) {
-    console.log(this.host)
-    // var headers = {'host': this.host}
-    var headers ={}
-    // var headers = {'host': 'vpc.cn-north-1.myhuaweicloud.com:443'}
+    var headers = {'host': this.toSignedHost}
     for (var header in request.header) {
       headers[header.toLowerCase().trim()] = request.header[header]
     }
@@ -1426,11 +1424,7 @@ class V4 {
     Utils.each(this.signedHeaders, function (header, idx) {
       var lcHeader = header.toLowerCase()
       if (headers[lcHeader]) {
-        if (lcHeader === 'host') {
-          canonicalHeaders.push(lcHeader + ':' + 'vpc.cn-north-1.myhuaweicloud.com')
-        } else {
-          canonicalHeaders.push(lcHeader + ':' + headers[lcHeader])
-        }
+        canonicalHeaders.push(lcHeader + ':' + headers[lcHeader])
       }
     })
     console.log(canonicalHeaders)
@@ -1456,7 +1450,7 @@ class V4 {
   generateSigntureKey (datestamp) {
     var dateKey = Utils.Crypto.hmac(Constants.SDK_NAME + this.sk, datestamp, 'buffer')
     var regionKey = Utils.Crypto.hmac(dateKey, this.region, 'buffer')
-    var serviceKey = Utils.Crypto.hmac(regionKey, 'vpc', 'buffer')
+    var serviceKey = Utils.Crypto.hmac(regionKey, this.service, 'buffer')
     return Utils.Crypto.hmac(serviceKey, Constants.SDK_TERMINATOR, 'buffer')
   }
 
@@ -1518,7 +1512,7 @@ class V4 {
 
     // ************* TASK 2: CREATE THE STRING TO SIGN*************
     // Match the algorithm to the hashing algorithm you use, either SHA-1 or SHA-256 (recommended)
-    var credentialScope = [datestamp, this.region, 'vpc', Constants.SDK_TERMINATOR].join('/')
+    var credentialScope = [datestamp, this.region, this.service, Constants.SDK_TERMINATOR].join('/')
     var stringToSign = [this.algorithm, sdkdate, credentialScope, canonicalRequestHash].join(Constants.LINE_SEPARATOR)
 
     // ************* TASK 3: CALCULATE THE SIGNATURE *************
@@ -1536,7 +1530,6 @@ class V4 {
                 'SignedHeaders=' + headerNamesToSign + ', ' + 'Signature=' + signature
     // request.set(Constants.AUTHORIZATION, authorization)  // add authorization header
     request.set('X-Api-Auth-Header', authorization)  // add authorization header
-    // request.set('Host', 'vpc.cn-north-1.myhuaweicloud.com')  // add authorization header
   }
 
 }
