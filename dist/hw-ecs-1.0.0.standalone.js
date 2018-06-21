@@ -57,7 +57,7 @@ var Utils = require('../utils.js')
  */
 var ECS = function (options) {
   // validate options
-  if (!options.ak || !options.sk || !options.projectId || !options.region || !options.endpoint || !options.toSignedHost) {
+  if (!options.ak || !options.sk || !options.projectId || !options.region || !options.endpoint) {
     var error = 'Could not construct HW.ECS -> option `ak`, `sk`, `projectId` must be present'
     throw new Error(error)
   }
@@ -67,7 +67,6 @@ var ECS = function (options) {
     'endpoint': `https://vpc.cn-north-1.myhwclouds.com`,
     'service': 'vpc',
     'region': 'cn-north-1',
-    'toSignedHost': 'vpc.cn-north-1.myhwclouds.com',
   }, options)
 
   // merge options to ECS instance
@@ -1387,7 +1386,7 @@ class V4 {
    * @return {Array}
    */
   getRequestHeaders (request) {
-    var headers = {'host': this.toSignedHost}
+    var headers = {'host': this.toSignedHost || this.host}
     for (var header in request.header) {
       headers[header.toLowerCase().trim()] = request.header[header]
     }
@@ -1478,7 +1477,11 @@ class V4 {
     // Step 2: Create canonical URI--the part of the URI from domain to query
     // must add '/' to the end
     // var canonicalURI = URL.pathname.endsWith('/') ? URL.pathname : URL.pathname + '/'
-    var canonicalURI = '/v1/e72385fde3574f8bb07d58f0de8ef948/vpcs/'
+    var canonicalURI = URL.pathname
+    if (this.toSignedHost) {
+      canonicalURI = canonicalURI.replace(`/meta/proxy/${this.toSignedHost}`, '')
+    }
+    canonicalURI = canonicalURI.endsWith('/') ? canonicalURI : canonicalURI + '/'
 
     // Step 3: Create the canonical query string. In this example (a GET request),
     // request parameters are in the query string. Query string values must
@@ -1528,8 +1531,11 @@ class V4 {
     var credential = this.ak + '/' + credentialScope
     var authorization = this.algorithm + ' ' + 'Credential=' + credential + ', ' +
                 'SignedHeaders=' + headerNamesToSign + ', ' + 'Signature=' + signature
-    // request.set(Constants.AUTHORIZATION, authorization)  // add authorization header
-    request.set('X-Api-Auth-Header', authorization)  // add authorization header
+    if (this.toSignedHost) {
+      request.set('X-Api-Auth-Header', authorization)  // add authorization header for rancher server
+    } else {
+      request.set(Constants.AUTHORIZATION, authorization)  // add authorization header
+    }
   }
 
 }
