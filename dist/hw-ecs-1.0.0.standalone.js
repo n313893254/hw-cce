@@ -70,6 +70,14 @@ ECS.prototype.getPublicips = function (callback) {
   }, _callback)
 }
 
+ECS.prototype.getAvaliableZone = function (callback) {
+  var _callback = this.logging(callback, 'ECS.getAvaliableZone')
+  this.validated(function () {
+    var resource = '/v2/' + this.projectId + '/os-availability-zone'
+    this.requestor.get(resource, null, _callback)
+  }, _callback)
+}
+
 
 module.exports = ECS
 
@@ -161,6 +169,10 @@ ECS.prototype.logging = function (callback, apiName) {
       } else {
         console.error(_error)
       }
+    }
+    var errorMessage
+    if (err) {
+      errorMessage = response.body.message
     }
     return callback && callback(err, response)
   }
@@ -1460,7 +1472,6 @@ class V4 {
         canonicalHeaders.push(lcHeader + ':' + headers[lcHeader])
       }
     })
-    console.log(canonicalHeaders)
     return canonicalHeaders.join(Constants.LINE_SEPARATOR) + Constants.LINE_SEPARATOR
   }
 
@@ -1501,7 +1512,7 @@ class V4 {
     // YYYYMMDD'T'HHMMSS'Z'
     var sdkdate = Utils.Date.sdkdate(now)
     request.set(Constants.X_SDK_DATE, sdkdate)   // add x-sdk-date header
-    // request.set(Constants.CONTENT_TYPE, 'application/json')   // add x-sdk-date header
+    request.set(Constants.CONTENT_TYPE, 'application/json')   // add x-sdk-date header
     // request.set(Constants.HOST, 'sffsd')   // add x-sdk-date header
 
     var datestamp = Utils.String.substrBefore(sdkdate, 'T')
@@ -1544,7 +1555,6 @@ class V4 {
     // Step 7: Combine elements to create create canonical request
     var canonicalRequest = this.buildCanonicalRequest(request.method, canonicalURI, canonicalQueryString,
                                                       canonicalHeaders, headerNamesToSign, payloadHash)
-    console.log(canonicalRequest)
     var canonicalRequestHash = Utils.sha256(canonicalRequest, 'hex')
 
     // ************* TASK 2: CREATE THE STRING TO SIGN*************

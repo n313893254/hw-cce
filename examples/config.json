@@ -2,6 +2,6 @@
   "ak": "OCQKNSBYFGW2OBYVK2HO",
   "sk": "te2yPx4rHOuaeaoN7AAbWdAqM2gyydEmVoB3UNfN",
   "projectId": "e72385fde3574f8bb07d58f0de8ef948",
-  "endpoint": "https://47.106.154.208:9443/meta/proxy/vpc.cn-north-1.myhuaweicloud.com",
+  "endpoint": "https://ecs.cn-north-1.myhuaweicloud.com",
   "region": "cn-north-1"
 }
