@@ -78,6 +78,14 @@ ECS.prototype.getAvaliableZone = function (callback) {
   }, _callback)
 }
 
+ECS.prototype.getPorts = function (callback) {
+  var _callback = this.logging(callback, 'ECS.getPorts')
+  this.validated(function () {
+    var resource = '/v1/ports'
+    this.requestor.get(resource, null, _callback)
+  }, _callback)
+}
+
 
 module.exports = ECS
 
@@ -1278,7 +1286,6 @@ class Requestor {
 
     // sign request
     this.signer.sign(request)
-    console.log(request)
     request.end(function (err, response) {
       // self.logError(URL, err, response)
       // execute callback if required
